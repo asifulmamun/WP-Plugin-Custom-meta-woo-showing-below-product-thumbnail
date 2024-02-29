@@ -114,55 +114,6 @@ function ecommercehints_render_demo_url_metabox($post)
 //     }
 // }
 
-add_action('save_post_product', 'ecommercehints_save_demo_url_meta', 10, 1);
-function ecommercehints_save_demo_url_meta($post_id)
-{
-
-    error_log('Saving Data');
-
-    // Check if nonce is set
-    if (isset($_POST['_wpnonce']) && !empty($_POST['_wpnonce'])) {
-        // Verify nonce
-        if (wp_verify_nonce($_POST['_wpnonce'], 'demo_url')) {
-            // Check if the user has permission to edit
-            if (current_user_can('edit_post', $post_id)) {
-                // Save the demo URL
-                $demo_url = isset($_POST['demo_url']) ? sanitize_text_field($_POST['demo_url']) : '';
-                update_post_meta($post_id, 'demo_url', $demo_url);
-            }
-        }
-    }
-}
-
-
-
-public function woofv_save_video_box( $post_id ) {
-    if ( ! isset( $_POST['woofv_video_box_nonce'] ) ) {
-      return $post_id;
-    }
-
-    $nonce = $_POST['woofv_video_box_nonce'];
-
-
-    if ( ! wp_verify_nonce( $nonce, 'woofv_video_box' ) ) {
-      return $post_id;
-    }
-
-
-    if ( 'product' == $_POST['post_type'] ) {
-      if ( ! current_user_can( 'edit_page', $post_id ) ) {
-        return $post_id;
-      }
-    } else {
-      if ( ! current_user_can( 'edit_post', $post_id ) ) {
-        return $post_id;
-      }
-    }
-
-    $woofv_data = array_map('sanitize_text_field', $_POST['woofv_video_embed'] );
-    update_post_meta( $post_id, '_woofv_video_embed', $woofv_data );
-  }
-
 
 
 
