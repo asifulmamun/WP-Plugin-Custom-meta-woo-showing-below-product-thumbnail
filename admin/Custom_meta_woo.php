@@ -42,13 +42,13 @@ class Custom_meta_woo {
 
     // Save the data
     public function save_meta($post_id) {
-        if (isset($_POST[$this->field_name]) && !empty($_POST[$this->field_name])) {
+        // if (isset($_POST[$this->field_name]) && !empty($_POST[$this->field_name])) {
             if (current_user_can('edit_post', $post_id)) {
                 // Save the value
                 $meta_value = isset($_POST[$this->field_name]) ? sanitize_text_field($_POST[$this->field_name]) : '';
                 update_post_meta($post_id, $this->field_name, $meta_value);
             }
-        }
+        // }
     }
 }
 
