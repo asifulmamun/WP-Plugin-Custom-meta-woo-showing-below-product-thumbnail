@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Custom Meta Below Product Thumbnail
 Plugin URI: https://github.com/asifulmamun/WP-Plugin-Custom-meta-woo-showing-below-product-thumbnail/
 Description: This is the custom meta box, where user can add meta from product edit page and it will be showing below the product thumbnail, this plugin inspiration by https://wp-premium.org
-Version: 3.2.4
+Version: 1.2.2
 Author: Al Mamun - asifulmamun
 Author URI: https://asifulmamun.info.bd
 */
