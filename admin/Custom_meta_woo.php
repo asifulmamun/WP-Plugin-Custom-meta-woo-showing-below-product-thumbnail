@@ -36,7 +36,7 @@ class Custom_meta_woo {
         echo '<div class="options_group">';
         echo '<label for="'. $this->field_name .'">'. $this->meta_name .'</label>';
         echo '<input type="text" id="'. $this->field_name .'" name="'. $this->field_name .'" value="' . esc_attr($meta_value) . '" />';
-        echo '<p class="description">'. $this->field_desc .'&nbsp;<a style="font-size:8px;color:#dbd7d7;" target="_blank" href="https://asifulmamun.info.bd" class="credit">@asifulmamun</a></p><style>.credit:hover{color:blue;}</style>';
+        echo '<p class="description">'. $this->field_desc .'&nbsp;<a style="font-size:8px;color:#dbd7d7;" target="_blank" href="https://asifulmamun.info.bd" class="credit">@asifulmamun</a></p><style>.credit:hover{color:blue !important;}</style>';
         echo '</div>';
     }
 
