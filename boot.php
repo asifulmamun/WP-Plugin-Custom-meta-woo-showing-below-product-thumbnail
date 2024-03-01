@@ -25,6 +25,14 @@ $woo_meta->meta_name = 'Demo URL';
 $woo_meta->field_desc = 'Enter The Demo URL';
 $woo_meta->field_name = 'demo_url';
 
+// Meta Box
+use Admin\Custom_meta_woo as Video;
+$Video = new Woo_meta;
+$Video->meta_name = 'Video Url';
+$Video->field_desc = 'Enter The Video URL';
+$Video->field_name = 'video_url';
+
+
 
 
 

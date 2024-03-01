@@ -21,6 +21,7 @@ class CustomJSAndCSSForSingleProduct {
 
         // Get the demo URL from product meta
         $demo_url = $product->get_meta('demo_url');
+        $video_url = $product->get_meta('video_url');
 
         // Display the content if demo URL is not empty
         if (!empty($demo_url)) :
@@ -28,7 +29,7 @@ class CustomJSAndCSSForSingleProduct {
             <script>
                 // Add the View Demo button dynamically after DOMContentLoaded
                 document.addEventListener('DOMContentLoaded', function () {
-                    contentLoad('view_demo_btn_below_product_thumb', '<a class="view_demo_btn" href="<?php echo esc_url($demo_url); ?>" target="_blank">View Demo</a>', '100%', 4);
+                    contentLoad('view_demo_btn_below_product_thumb', '<a class="view_demo_btn" href="<?php echo esc_url($demo_url); ?>" target="_blank">Sales Page</a>&nbsp;&nbsp;<a class="view_demo_btn" href="<?php echo esc_url($video_url); ?>" target="_blank">Watch Video</a>', '100%', 4);
                 });
             </script>
             <style>
