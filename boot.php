@@ -19,30 +19,39 @@ if( file_exists( FILE_DIR . '/vendor/autoload.php' ) ){
 
 
 // Meta Box
-use Admin\Custom_meta_woo as Woo_meta;
-$woo_meta = new Woo_meta;
-$woo_meta->meta_name = 'Demo URL';
-$woo_meta->field_desc = 'Enter The Demo URL';
-$woo_meta->field_name = 'demo_url';
+use Admin\Custom_meta_woo as Demo;
+$demo = new Demo;
+$demo->meta_name = 'Demo URL';
+$demo->field_desc = 'Enter The Demo URL';
+$demo->field_name = 'demo_url';
+$demo->meta_name_btn_txt = 'Button Name';
+$demo->field_name_btn_txt = 'demo_btn';
+$demo->field_name_btn_submit = 'Sales Page';
 
-// Meta Box
+use Frontend\Custom_btn as Demo_btn;
+$demo_btn = new Demo_btn;
+$demo_btn->field = $demo->field_name;
+$demo_btn->field_name_btn_submit = $demo->field_name_btn_txt;
+
+
+/**
+ *  Video
+ */
+// Dashboard
 use Admin\Custom_meta_woo as Video;
-$Video = new Woo_meta;
+$Video = new Video;
 $Video->meta_name = 'Video Url';
 $Video->field_desc = 'Enter The Video URL';
 $Video->field_name = 'video_url';
+$Video->meta_name_btn_txt = 'Button Name';
+$Video->field_name_btn_txt = 'video_btn';
+$Video->field_name_btn_submit = 'Watch Video';
 
-
-
-
-
-// Showing Demo
-use Frontend\Custom_btn;
-$demo = new Custom_btn;
-
-
-
-
+// show
+use Frontend\Custom_btn as Video_btn;
+$video_btn = new Video_btn;
+$video_btn->field = $Video->field_name;
+$video_btn->field_name_btn_submit = $Video->field_name_btn_txt;
 
 
 

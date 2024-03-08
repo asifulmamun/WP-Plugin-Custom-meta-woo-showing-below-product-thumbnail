@@ -6,6 +6,10 @@ namespace Frontend;
  * Data Showing
  */
 class Custom_btn {
+
+    public $field;
+    public $field_name_btn_submit;
+
     public function __construct() {
         // Add the custom JS and CSS to the wp_footer action
         add_action('wp_footer', array($this, 'add_custom_js_css_for_single_product'));
@@ -14,23 +18,25 @@ class Custom_btn {
     public function add_custom_js_css_for_single_product() {
         global $product;
 
+
         // Ensure $product is a valid instance and has the get_meta method
         if (!is_a($product, 'WC_Product') || !method_exists($product, 'get_meta')) {
             return;
         }
 
         // Get the demo URL from product meta
-        $demo_url = $product->get_meta('demo_url');
-        $video_url = $product->get_meta('video_url');
+        $url = $product->get_meta($this->field);
+        $btn = $product->get_meta($this->field_name_btn_submit);
+    
 
         $custom_content = '';
 
-        if (!empty($demo_url)):
-        $custom_content .= '<a class="view_demo_btn" href="' . esc_url($demo_url) . '" target="_blank">Sales Page</a>';
+        if (!empty($url)):
+            $custom_content .= '<a class="view_demo_btn" href="' . esc_url($url) . '" target="_blank">'. $btn .'</a>';
         endif;
-        if (!empty($video_url)):
-        $custom_content .= '&nbsp;&nbsp;<a class="view_demo_btn" href="' . esc_url($video_url) . '" target="_blank">Watch Video</a>';
-        endif;
+        // if (!empty($video_url)):
+        // $custom_content .= '&nbsp;&nbsp;<a class="view_demo_btn" href="' . esc_url($video_url) . '" target="_blank">Watch Video</a>';
+        // endif;
         ?>
         <script>
             // Add the View Demo button dynamically after DOMContentLoaded
