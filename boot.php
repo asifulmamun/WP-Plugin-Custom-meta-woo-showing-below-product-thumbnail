@@ -1,19 +1,35 @@
 <?php
 /*
-Plugin Name: WooCommerce Custom Meta Below Product Thumbnail
-Plugin URI: https://github.com/asifulmamun/WP-Plugin-Custom-meta-woo-showing-below-product-thumbnail/
+Plugin Name: wp-premium.org
+Plugin URI: https://github.com/asifulmamun/WooCommerce-wp-premium.org
 Description: This is the custom meta box, where user can add meta from product edit page and it will be showing below the product thumbnail, this plugin inspiration by https://wp-premium.org
-Version: 1.2.5
+Version: 2.0.0
 Author: Al Mamun - asifulmamun
 Author URI: https://asifulmamun.info.bd
 */
 
+
+// define('PLUGIN_DIR', plugin_dir_path(__FILE__) );
+// define('FILE_DIR', dirname( __FILE__ ) );
+
+// define('POST_FILE_FIELD', 'render_3d_field');
+// define('POST_TYPE', 'render_3d');
+// define('POST_SLUG', 'render_3d');
+// define('POST_NAME', '3D MODEL');
+
+// if( file_exists( FILE_DIR . '/vendor/autoload.php' ) ){
+//     require_once FILE_DIR . '/vendor/autoload.php';
+// }
+
+
+
+
 // Backend
-include(plugin_dir_path(__FILE__) . 'admin/Custom_meta_woo.php');
+include(plugin_dir_path(__FILE__) . 'Admin/Custom_meta_woo.php');
 
 
 // Frontend
-include(plugin_dir_path(__FILE__) . 'frontend/Show_product_single_meta.php');
+include(plugin_dir_path(__FILE__) . 'Frontend/Show_product_single_meta.php');
 
 
 
@@ -39,3 +55,29 @@ $Video->field_name = 'video_url';
 // Showing Demo
 use Frontend\CustomJSAndCSSForSingleProduct as Demo;
 $demo = new Demo;
+
+
+
+
+
+
+
+
+
+
+/* ==================== PLUGIN TASKS =================================================================================================== */
+// Activation hook
+function activate_render_3d() {
+    flush_rewrite_rules();
+}
+register_activation_hook(__FILE__, 'activate_render_3d');
+
+
+
+// Deactivation hook
+function deactivate_render_3d() {
+    flush_rewrite_rules();
+}
+register_deactivation_hook(__FILE__, 'deactivate_render_3d');
+
+/* ==================== / PLUGIN DEFAULT =================================================================================================== */

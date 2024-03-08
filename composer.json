@@ -1,0 +1,18 @@
+{
+    "name": "asifulmamun/wp-premium.org",
+    "license": "GPL",
+    "autoload": {
+        "psr-4": {
+            "Admin\\": "./Admin",
+            "Frontend\\": "./Frontend"
+
+        }
+    },
+    "authors": [
+        {
+            "name": "asifulmamun",
+            "email": "hello@asifulmamun.info.bd"
+        }
+    ],
+    "require": {}
+}
