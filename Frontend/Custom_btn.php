@@ -5,7 +5,7 @@ namespace Frontend;
 /* 
  * Data Showing
  */
-class CustomJSAndCSSForSingleProduct {
+class Custom_btn {
     public function __construct() {
         // Add the custom JS and CSS to the wp_footer action
         add_action('wp_footer', array($this, 'add_custom_js_css_for_single_product'));

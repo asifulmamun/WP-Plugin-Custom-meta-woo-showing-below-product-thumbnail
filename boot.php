@@ -9,27 +9,23 @@ Author URI: https://asifulmamun.info.bd
 */
 
 
-// define('PLUGIN_DIR', plugin_dir_path(__FILE__) );
-// define('FILE_DIR', dirname( __FILE__ ) );
+define('PLUGIN_DIR', plugin_dir_path(__FILE__) );
+define('FILE_DIR', dirname( __FILE__ ) );
 
-// define('POST_FILE_FIELD', 'render_3d_field');
-// define('POST_TYPE', 'render_3d');
-// define('POST_SLUG', 'render_3d');
-// define('POST_NAME', '3D MODEL');
 
-// if( file_exists( FILE_DIR . '/vendor/autoload.php' ) ){
-//     require_once FILE_DIR . '/vendor/autoload.php';
-// }
+if( file_exists( FILE_DIR . '/vendor/autoload.php' ) ){
+    require_once FILE_DIR . '/vendor/autoload.php';
+}
 
 
 
 
-// Backend
-include(plugin_dir_path(__FILE__) . 'Admin/Custom_meta_woo.php');
+// // Backend
+// include(plugin_dir_path(__FILE__) . 'Admin/Custom_meta_woo.php');
 
 
-// Frontend
-include(plugin_dir_path(__FILE__) . 'Frontend/Show_product_single_meta.php');
+// // Frontend
+// include(plugin_dir_path(__FILE__) . 'Frontend/Show_product_single_meta.php');
 
 
 
@@ -53,8 +49,8 @@ $Video->field_name = 'video_url';
 
 
 // Showing Demo
-use Frontend\CustomJSAndCSSForSingleProduct as Demo;
-$demo = new Demo;
+use Frontend\Custom_btn;
+$demo = new Custom_btn;
 
 
 
