@@ -18,18 +18,6 @@ if( file_exists( FILE_DIR . '/vendor/autoload.php' ) ){
 }
 
 
-
-
-// // Backend
-// include(plugin_dir_path(__FILE__) . 'Admin/Custom_meta_woo.php');
-
-
-// // Frontend
-// include(plugin_dir_path(__FILE__) . 'Frontend/Show_product_single_meta.php');
-
-
-
-
 // Meta Box
 use Admin\Custom_meta_woo as Woo_meta;
 $woo_meta = new Woo_meta;
