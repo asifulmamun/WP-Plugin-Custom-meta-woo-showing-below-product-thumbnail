@@ -65,14 +65,25 @@ class Custom_btn {
             function contentLoad(customID, contentHTML, flexBasis, flexOrder) {
                 var galleryWithImages = document.querySelector('.woocommerce-product-gallery--with-images');
                 if (galleryWithImages) {
-                    var newElement = document.createElement('div');
-                    newElement.id = customID;
-                    newElement.style.flexBasis = flexBasis;
+                    var newElement = document.createElement('ul');
+                    newElement.id = 'view_demo_btn_below_product_thumb';
+                    newElement.style.flexBasis = '100%';
                     if (flexOrder > 0) {
                         newElement.style.order = flexOrder;
                     }
                     newElement.innerHTML = contentHTML;
                     galleryWithImages.appendChild(newElement);
+
+
+
+                    // var newElement = document.createElement('div');
+                    // newElement.id = customID;
+                    // newElement.style.flexBasis = flexBasis;
+                    // if (flexOrder > 0) {
+                    //     newElement.style.order = flexOrder;
+                    // }
+                    // newElement.innerHTML = contentHTML;
+                    // galleryWithImages.appendChild(newElement);
                 }
             }
         </script>
