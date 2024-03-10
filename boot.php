@@ -18,7 +18,22 @@ if( file_exists( FILE_DIR . '/vendor/autoload.php' ) ){
 }
 
 
-// Meta Box
+
+use Frontend\Add_element_below_product_thumb as UlProductBelow;
+$ul_product_below = new UlProductBelow;
+$ul_product_below->register();
+$ul_product_below->query_select = '.woocommerce-product-gallery--with-images';
+$ul_product_below->new_el = 'div';
+$ul_product_below->new_el_id = 'el_below_product_thumb';
+$ul_product_below->new_el_className = 'el_below_product_thumb';
+$ul_product_below->new_el_styles = '<style>.el_below_product_thumb{flex-basis:100%;order:100;}</style>';
+$ul_product_below->new_el_innerHTML = '<b>The Demo</b>';
+
+
+
+
+
+// Demo URL
 use Admin\Custom_meta_woo as Demo;
 $demo = new Demo;
 $demo->meta_name = 'Demo URL';
@@ -28,14 +43,16 @@ $demo->meta_name_btn_txt = 'Button Name';
 $demo->field_name_btn_txt = 'demo_btn';
 $demo->field_name_btn_submit = 'Sales Page';
 
-use Frontend\Custom_btn as Demo_btn;
-$demo_btn = new Demo_btn;
-$demo_btn->field = $demo->field_name;
-$demo_btn->field_name_btn_submit = $demo->field_name_btn_txt;
+// Show
+// use Frontend\Custom_btn as Demo_btn;
+// $demo_btn = new Demo_btn;
+// $demo_btn->field = $demo->field_name;
+// $demo_btn->field_name_btn_submit = $demo->field_name_btn_txt;
+
 
 
 /**
- *  Video
+ *  Video URL
  */
 // Dashboard
 use Admin\Custom_meta_woo as Video;
@@ -43,6 +60,7 @@ $Video = new Video;
 $Video->meta_name = 'Video Url';
 $Video->field_desc = 'Enter The Video URL';
 $Video->field_name = 'video_url';
+
 $Video->meta_name_btn_txt = 'Button Name';
 $Video->field_name_btn_txt = 'video_btn';
 $Video->field_name_btn_submit = 'Watch Video';
