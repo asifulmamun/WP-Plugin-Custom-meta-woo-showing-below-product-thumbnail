@@ -41,36 +41,19 @@ class Custom_btn {
         <script>
             // Add the View Demo button dynamically after DOMContentLoaded
             document.addEventListener('DOMContentLoaded', function () {
-                contentLoad('view_demo_btn_below_product_thumb', '<?php echo $custom_content; ?>', '100%', 4);
+                contentLoad('<?php echo $custom_content; ?>');
             });
         </script>
-        <style>
-            /* Add your existing CSS styles for the View Demo button */
-            .view_demo_btn {
-                padding: .8rem 1rem;
-                border-radius: var(--btn-accented-brd-radius);
-                color: var(--btn-accented-color);
-                box-shadow: var(--btn-accented-box-shadow);
-                background-color: var(--btn-accented-bgcolor);
-                text-transform: var(--btn-accented-transform, var(--btn-transform));
-                font-weight: var(--btn-accented-font-weight, var(--btn-font-weight));
-                font-family: var(--btn-accented-font-family, var(--btn-font-family));
-                font-style: var(--btn-accented-font-style, var(--btn-font-style));
-                order: 20;
-            }
-        </style>
+        <style>.view_demo_btn {padding:.8rem 1rem;border-radius:var(--btn-accented-brd-radius);color:var(--btn-accented-color);box-shadow:var(--btn-accented-box-shadow);background-color:var(--btn-accented-bgcolor);text-transform:var(--btn-accented-transform, var(--btn-transform));font-weight:var(--btn-accented-font-weight, var(--btn-font-weight));font-family:var(--btn-accented-font-family, var(--btn-font-family));font-style:var(--btn-accented-font-style, var(--btn-font-style));order:20;}</style>
 
         <script type="text/javascript">
             // Function to dynamically add content to the product gallery
-            function contentLoad(customID, contentHTML, flexBasis, flexOrder) {
-                var galleryWithImages = document.querySelector('.woocommerce-product-gallery--with-images');
+            function contentLoad(contentHTML) {
+                var galleryWithImages = document.querySelector('#el_below_product_thumb');
                 if (galleryWithImages) {
-                    var newElement = document.createElement('ul');
-                    newElement.id = 'view_demo_btn_below_product_thumb';
-                    newElement.style.flexBasis = '100%';
-                    if (flexOrder > 0) {
-                        newElement.style.order = flexOrder;
-                    }
+                    var newElement = document.createElement('li');
+                    // newElement.id = 'view_demo_btn_below_product_thumb';
+                    // newElement.style.flexBasis = '100%';
                     newElement.innerHTML = contentHTML;
                     galleryWithImages.appendChild(newElement);
 
@@ -87,17 +70,5 @@ class Custom_btn {
                 }
             }
         </script>
-        <style>
-            /* Additional CSS styles for the product gallery */
-            .woocommerce-product-gallery--with-images {
-                display: flex !important;
-                flex-wrap: wrap !important;
-            }
-
-            .woocommerce-product-gallery--with-images>div:nth-child(1),
-            .woocommerce-product-gallery--with-images>div:nth-child(1) {
-                flex-basis: fit-content;
-            }
-        </style>
     <?php }
 }

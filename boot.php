@@ -23,7 +23,7 @@ use Frontend\Add_element_below_product_thumb as UlProductBelow;
 $ul_product_below = new UlProductBelow;
 $ul_product_below->register();
 $ul_product_below->query_select = '.woocommerce-product-gallery--with-images';
-$ul_product_below->new_el = 'div';
+$ul_product_below->new_el = 'ul';
 $ul_product_below->new_el_id = 'el_below_product_thumb';
 $ul_product_below->new_el_className = 'el_below_product_thumb';
 $ul_product_below->new_el_styles = '<style>.el_below_product_thumb{flex-basis:100%;order:100;}</style>';
@@ -44,10 +44,10 @@ $demo->field_name_btn_txt = 'demo_btn';
 $demo->field_name_btn_submit = 'Sales Page';
 
 // Show
-// use Frontend\Custom_btn as Demo_btn;
-// $demo_btn = new Demo_btn;
-// $demo_btn->field = $demo->field_name;
-// $demo_btn->field_name_btn_submit = $demo->field_name_btn_txt;
+use Frontend\Custom_btn as Demo_btn;
+$demo_btn = new Demo_btn;
+$demo_btn->field = $demo->field_name;
+$demo_btn->field_name_btn_submit = $demo->field_name_btn_txt;
 
 
 
