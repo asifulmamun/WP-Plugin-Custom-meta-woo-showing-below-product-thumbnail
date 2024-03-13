@@ -38,7 +38,7 @@ class Custom_meta_woo {
         error_log('Rendering Metabox');
 
         $meta_value = get_post_meta($post->ID, $this->field_name, true); // field - main
-        $meta_value_btn_txt = (get_post_meta($post->ID, $this->field_name_btn_txt, true)) ? get_post_meta($post->ID, $this->field_name_btn_txt, true) : $this->field_name_btn_submit;
+        $meta_value_btn_txt = (get_post_meta($post->ID, $this->field_name_btn_txt, true)) ? get_post_meta($post->ID, $this->field_name_btn_txt, true) : $this->field_name_btn_txt;
 
 
         $render_form = '';
@@ -50,8 +50,8 @@ class Custom_meta_woo {
                     $render_form .= '<input type="text" id="'. $this->field_name .'" name="'. $this->field_name .'" value="' . esc_attr($meta_value) . '" />';
                 $render_form .= '</li>';
                 $render_form .= '<li>';
-                    $render_form .= '<label for="'. $this->field_name_btn_txt .'">'. $this->meta_name_btn_txt .'</label>';
-                    $render_form .= '<input type="text" id="'. $this->field_name_btn_txt .'" name="'. $this->field_name_btn_txt .'" value="' . esc_attr($meta_value_btn_txt) . '" />';
+                    $render_form .= '<label for="'. $this->field_name_btn_submit .'">'. $this->meta_name_btn_txt .'</label>';
+                    $render_form .= '<input type="text" id="'. $this->field_name_btn_submit .'" name="'. $this->field_name_btn_submit .'" value="' . esc_attr($meta_value_btn_txt) . '" />';
                 $render_form .= '</li>';
         $render_form .= '</ul>';
 
@@ -64,7 +64,7 @@ class Custom_meta_woo {
             if (current_user_can('edit_post', $post_id)) {
                 // Save the value
                 $meta_value = isset($_POST[$this->field_name]) ? sanitize_text_field($_POST[$this->field_name]) : '';
-                $meta_value_btn_txt = isset($_POST[$this->field_name_btn_txt]) ? sanitize_text_field($_POST[$this->field_name_btn_txt]) : '';
+                $meta_value_btn_txt = isset($_POST[$this->field_name_btn_submit]) ? sanitize_text_field($_POST[$this->field_name_btn_submit]) : '';
 
                 update_post_meta($post_id, $this->field_name, $meta_value); // field 1
                 update_post_meta($post_id, $this->field_name_btn_txt, $meta_value_btn_txt); // field 2

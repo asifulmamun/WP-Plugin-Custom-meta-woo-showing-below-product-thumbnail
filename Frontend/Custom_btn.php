@@ -26,7 +26,7 @@ class Custom_btn {
 
         // Get the demo URL from product meta
         $url = $product->get_meta($this->field);
-        $btn = $product->get_meta($this->field_name_btn_submit);
+        $btn = ($product->get_meta($this->field_name_btn_submit)) ? $product->get_meta($this->field_name_btn_submit) : $this->field_name_btn_submit;
     
 
         $custom_content = '';

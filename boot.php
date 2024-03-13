@@ -41,8 +41,8 @@ $demo->field_desc = 'Enter The Demo URL';
 $demo->field_name = 'demo_url';
 
 $demo->meta_name_btn_txt = 'Button Name';
-$demo->field_name_btn_txt = 'demo_btn';
-$demo->field_name_btn_submit = 'Sales Page';
+$demo->field_name_btn_submit = 'demo_btn';
+$demo->field_name_btn_txt = 'Sales Page';
 
 // Show
 use Frontend\Custom_btn as Demo_btn;
@@ -63,8 +63,8 @@ $Video->field_desc = 'Enter The Video URL';
 $Video->field_name = 'video_url';
 
 $Video->meta_name_btn_txt = 'Button Name';
-$Video->field_name_btn_txt = 'video_btn';
-$Video->field_name_btn_submit = 'Watch Video';
+$Video->field_name_btn_submit = 'video_btn';
+$Video->field_name_btn_txt = 'Watch Video';
 
 // show
 use Frontend\Custom_btn as Video_btn;
