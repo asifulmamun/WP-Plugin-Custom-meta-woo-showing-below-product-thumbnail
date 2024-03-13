@@ -22,6 +22,10 @@ class Add_element_below_product_thumb {
 
     
     // Render the HTML element to selected ID
-    public function add_elements(){echo $this->new_el_styles;?><style>.woocommerce-product-gallery--with-images{display:flex!important;flex-wrap:wrap!important;}.woocommerce-product-gallery--with-images>div:nth-child(1),.woocommerce-product-gallery--with-images>div:nth-child(1){flex-basis: fit-content;}</style><script type="text/javascript">document.addEventListener('DOMContentLoaded',function(){var galleryWithImages = document.querySelector("<?php echo $this->query_select; ?>");if (galleryWithImages) {var newElement=document.createElement("<?php echo $this->new_el; ?>");newElement.id='<?php echo $this->new_el_id; ?>';newElement.className='<?php echo $this->new_el_className; ?>';newElement.innerHTML='<?php echo $this->new_el_innerHTML; ?>';galleryWithImages.appendChild(newElement);}});</script><?php }
+    public function add_elements(){
+        
+        echo $this->new_el_styles;?><style>.woocommerce-product-gallery--with-images{display:flex!important;flex-wrap:wrap!important;}.woocommerce-product-gallery--with-images>div:nth-child(1),.woocommerce-product-gallery--with-images>div:nth-child(1){flex-basis: fit-content;}</style><script type="text/javascript">document.addEventListener('DOMContentLoaded',function(){var galleryWithImages = document.querySelector("<?php echo $this->query_select; ?>");if (galleryWithImages) {var newElement=document.createElement("<?php echo $this->new_el; ?>");newElement.id='<?php echo $this->new_el_id; ?>';newElement.className='<?php echo $this->new_el_className; ?>';newElement.innerHTML='<?php echo $this->new_el_innerHTML; ?>';galleryWithImages.appendChild(newElement);}});</script>
+
+    <?php }
 
 }

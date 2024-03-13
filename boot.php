@@ -26,8 +26,8 @@ $ul_product_below->query_select = '.woocommerce-product-gallery--with-images';
 $ul_product_below->new_el = 'ul';
 $ul_product_below->new_el_id = 'el_below_product_thumb';
 $ul_product_below->new_el_className = 'el_below_product_thumb';
-$ul_product_below->new_el_styles = '<style>.el_below_product_thumb{flex-basis:100%;order:100;}</style>';
-$ul_product_below->new_el_innerHTML = '<b>The Demo</b>';
+$ul_product_below->new_el_styles = '<style>.el_below_product_thumb{flex-basis:100%;order:100;list-style:none;padding:.8rem 0 .8rem 0;display:flex;flex-direction:row;gap:0.8rem;}</style>';
+// $ul_product_below->new_el_innerHTML = '<b>The Demo</b>';
 
 
 
@@ -39,6 +39,7 @@ $demo = new Demo;
 $demo->meta_name = 'Demo URL';
 $demo->field_desc = 'Enter The Demo URL';
 $demo->field_name = 'demo_url';
+
 $demo->meta_name_btn_txt = 'Button Name';
 $demo->field_name_btn_txt = 'demo_btn';
 $demo->field_name_btn_submit = 'Sales Page';
@@ -66,10 +67,10 @@ $Video->field_name_btn_txt = 'video_btn';
 $Video->field_name_btn_submit = 'Watch Video';
 
 // show
-// use Frontend\Custom_btn as Video_btn;
-// $video_btn = new Video_btn;
-// $video_btn->field = $Video->field_name;
-// $video_btn->field_name_btn_submit = $Video->field_name_btn_txt;
+use Frontend\Custom_btn as Video_btn;
+$video_btn = new Video_btn;
+$video_btn->field = $Video->field_name;
+$video_btn->field_name_btn_submit = $Video->field_name_btn_txt;
 
 
 
