@@ -91,3 +91,13 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
 
 
 
+/**
+ * Add Mini Status
+ * @package wp-premium.org
+ */
+
+    use Admin\Custom_meta_woo_woodmart as c_Field;
+    $custom_field = new c_Field;
+    $custom_field->register();
+    $custom_field->field_name = 'auto_update';
+    $custom_field->meta_name = 'Auto Update';
