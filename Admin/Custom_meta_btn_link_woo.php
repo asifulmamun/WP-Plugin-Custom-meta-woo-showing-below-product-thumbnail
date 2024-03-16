@@ -3,8 +3,8 @@
 
 namespace Admin;
 
-if (!class_exists('Custom_meta_woo')) {
-    class Custom_meta_woo {
+if (!class_exists('Custom_meta_btn_link_woo')) {
+    class Custom_meta_btn_link_woo {
 
         public $meta_name = '';
         public $field_desc = '';

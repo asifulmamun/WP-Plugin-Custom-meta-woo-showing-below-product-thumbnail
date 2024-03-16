@@ -55,7 +55,7 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
 
 
     // Demo URL
-        use Admin\Custom_meta_woo as Demo;
+        use Admin\Custom_meta_btn_link_woo as Demo;
         $demo = new Demo;
         $demo->meta_name = 'Demo URL';
         $demo->field_desc = 'Enter The Demo URL';
@@ -72,20 +72,20 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
 
 
     // Video - Dashboard
-    use Admin\Custom_meta_woo as Video;
-    $Video = new Video;
-    $Video->meta_name = 'Video Url';
-    $Video->field_desc = 'Enter The Video URL';
-    $Video->field_name = 'video_url';
-    // btn
-    $Video->meta_name_btn_txt = 'Button Name';
-    $Video->field_name_btn_submit = 'video_btn';
-    $Video->field_name_btn_txt = 'Watch Video';
-    // show
-    use Frontend\Custom_btn as Video_btn;
-    $video_btn = new Video_btn;
-    $video_btn->field = $Video->field_name;
-    $video_btn->field_name_btn_submit = $Video->field_name_btn_txt;
+        use Admin\Custom_meta_btn_link_woo as Video;
+        $Video = new Video;
+        $Video->meta_name = 'Video Url';
+        $Video->field_desc = 'Enter The Video URL';
+        $Video->field_name = 'video_url';
+        // btn
+        $Video->meta_name_btn_txt = 'Button Name';
+        $Video->field_name_btn_submit = 'video_btn';
+        $Video->field_name_btn_txt = 'Watch Video';
+        // show
+        use Frontend\Custom_btn as Video_btn;
+        $video_btn = new Video_btn;
+        $video_btn->field = $Video->field_name;
+        $video_btn->field_name_btn_submit = $Video->field_name_btn_txt;
 
 
 
@@ -96,13 +96,13 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
  * @package wp-premium.org
  */
 
-    use Admin\Custom_meta_yes_no_woo_woodmart as c_Field_auto_update;
+    use Admin\Custom_meta_yes_no_data_woo_woodmart as c_Field_auto_update;
     $custom_field_auto_update = new c_Field_auto_update;
     $custom_field_auto_update->register();
     $custom_field_auto_update->field_name = 'auto_update';
     $custom_field_auto_update->meta_name = 'Auto Update';
 
-    use Admin\Custom_meta_yes_no_woo_woodmart as c_Field_mannual_update;
+    use Admin\Custom_meta_yes_no_data_woo_woodmart as c_Field_mannual_update;
     $custom_field_mannual_update = new c_Field_mannual_update;
     $custom_field_mannual_update->register();
     $custom_field_mannual_update->field_name = 'mannual_update';
