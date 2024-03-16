@@ -94,7 +94,7 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
 
 
 /**
- * Add Mini Status
+ * Add Mini Status YES/NO and Value
  * @package wp-premium.org
  */
 
@@ -113,3 +113,16 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
         $custom_field_mannual_update->meta_name = 'Mannual Update';
 
 
+
+
+/**
+ * Text Field
+ * @package wp-premium.org
+ */
+
+    // Version
+    use Admin\Custom_meta_text_woo_woodmart as c_Version;
+        $custom_post_version = new c_Version;
+        $custom_post_version->register();
+        $custom_post_version->field_name = 'product_version';
+        $custom_post_version->meta_name = 'Version';

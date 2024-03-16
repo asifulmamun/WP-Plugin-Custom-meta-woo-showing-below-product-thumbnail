@@ -17,7 +17,7 @@
             }
 
 
-                    // Add meta box
+        // Add meta box
         public function add_metabox() {
             add_meta_box(
                 "{$this->field_name}_metabox",

@@ -48,8 +48,8 @@ if (!class_exists('Custom_meta_btn_link_woo')) {
                 $render_form .= '<li>';
                         $render_form .= '<label for="'. $this->field_name .'">'. $this->meta_name .'</label>';
                         $render_form .= '<input type="text" id="'. $this->field_name .'" name="'. $this->field_name .'" value="' . esc_attr($meta_value) . '" />';
-                    $render_form .= '</li>';
-                    $render_form .= '<li>';
+                $render_form .= '</li>';
+                $render_form .= '<li>';
                         $render_form .= '<label for="'. $this->field_name_btn_submit .'">'. $this->meta_name_btn_txt .'</label>';
                         $render_form .= '<input type="text" id="'. $this->field_name_btn_submit .'" name="'. $this->field_name_btn_submit .'" value="' . esc_attr($meta_value_btn_txt) . '" />';
                     $render_form .= '</li>';
