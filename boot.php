@@ -126,3 +126,11 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
         $custom_post_version->register();
         $custom_post_version->field_name = 'product_version';
         $custom_post_version->meta_name = 'Version';
+
+
+    // Virus Total Hash File
+    use Admin\Custom_meta_text_woo_woodmart as Virus_total;
+        $vt = new Virus_total;
+        $vt->register();
+        $vt->field_name = 'vt_data';
+        $vt->meta_name = 'Virus Total Hash File';
