@@ -134,3 +134,18 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
         $vt->register();
         $vt->field_name = 'vt_data';
         $vt->meta_name = 'Virus Total Hash File';
+
+
+
+
+/**
+ * Date Field
+ * @package wp-premium.org
+ */
+
+    // Update ON
+    use Admin\Custom_meta_date_woo_woodmart as UpdateOn;
+    $upo = new UpdateOn;
+    $upo->register();
+    $upo->field_name = 'custom_product_update_on';
+    $upo->meta_name = 'Update On';
