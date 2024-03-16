@@ -96,8 +96,14 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
  * @package wp-premium.org
  */
 
-    use Admin\Custom_meta_woo_woodmart as c_Field;
-    $custom_field = new c_Field;
-    $custom_field->register();
-    $custom_field->field_name = 'auto_update';
-    $custom_field->meta_name = 'Auto Update';
+    use Admin\Custom_meta_yes_no_woo_woodmart as c_Field_auto_update;
+    $custom_field_auto_update = new c_Field_auto_update;
+    $custom_field_auto_update->register();
+    $custom_field_auto_update->field_name = 'auto_update';
+    $custom_field_auto_update->meta_name = 'Auto Update';
+
+    use Admin\Custom_meta_yes_no_woo_woodmart as c_Field_mannual_update;
+    $custom_field_mannual_update = new c_Field_mannual_update;
+    $custom_field_mannual_update->register();
+    $custom_field_mannual_update->field_name = 'mannual_update';
+    $custom_field_mannual_update->meta_name = 'Mannual Update';

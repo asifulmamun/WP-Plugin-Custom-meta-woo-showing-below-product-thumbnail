@@ -2,8 +2,8 @@
 
     namespace Admin;
 
-    if (!class_exists('Custom_meta_woo_woodmart')) {
-        class Custom_meta_woo_woodmart {
+    if (!class_exists('Custom_meta_yes_no_woo_woodmart')) {
+        class Custom_meta_yes_no_woo_woodmart {
 
             public $field_name;
             public $meta_name;
@@ -96,11 +96,6 @@
                 }
             // }
         }
-
-
-
-
-
 
 
         }
