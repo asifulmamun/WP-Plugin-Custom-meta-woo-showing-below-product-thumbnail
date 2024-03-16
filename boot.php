@@ -43,19 +43,21 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
  * @package - WooCommerce-custom-elements-below-thumbnail
  * 
   */
+    
+    // By JS - Auto add btn below thumb
     use Frontend\Add_element_below_product_thumb as UlProductBelow;
-    $ul_product_below = new UlProductBelow;
-    $ul_product_below->register();
-    $ul_product_below->query_select = '.woocommerce-product-gallery--with-images';
-    $ul_product_below->new_el = 'ul';
-    $ul_product_below->new_el_id = 'el_below_product_thumb';
-    $ul_product_below->new_el_className = 'el_below_product_thumb';
-    $ul_product_below->new_el_styles = '<style>.el_below_product_thumb{flex-basis:100%;order:100;list-style:none;padding:.8rem 0 .8rem 0;display:flex;flex-direction:row;gap:0.8rem;}</style>';
-    // $ul_product_below->new_el_innerHTML = '<b>The Demo</b>';
+        $ul_product_below = new UlProductBelow;
+        $ul_product_below->register();
+        $ul_product_below->query_select = '.woocommerce-product-gallery--with-images';
+        $ul_product_below->new_el = 'ul';
+        $ul_product_below->new_el_id = 'el_below_product_thumb';
+        $ul_product_below->new_el_className = 'el_below_product_thumb';
+        $ul_product_below->new_el_styles = '<style>.el_below_product_thumb{flex-basis:100%;order:100;list-style:none;padding:.8rem 0 .8rem 0;display:flex;flex-direction:row;gap:0.8rem;}</style>';
+        // $ul_product_below->new_el_innerHTML = '<b>The Demo</b>';
 
 
     // Demo URL
-        use Admin\Custom_meta_btn_link_woo as Demo;
+    use Admin\Custom_meta_btn_link_woo as Demo;
         $demo = new Demo;
         $demo->meta_name = 'Demo URL';
         $demo->field_desc = 'Enter The Demo URL';
@@ -72,7 +74,7 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
 
 
     // Video - Dashboard
-        use Admin\Custom_meta_btn_link_woo as Video;
+    use Admin\Custom_meta_btn_link_woo as Video;
         $Video = new Video;
         $Video->meta_name = 'Video Url';
         $Video->field_desc = 'Enter The Video URL';
@@ -96,14 +98,18 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
  * @package wp-premium.org
  */
 
+    //  Auto update field
     use Admin\Custom_meta_yes_no_data_woo_woodmart as c_Field_auto_update;
-    $custom_field_auto_update = new c_Field_auto_update;
-    $custom_field_auto_update->register();
-    $custom_field_auto_update->field_name = 'auto_update';
-    $custom_field_auto_update->meta_name = 'Auto Update';
+        $custom_field_auto_update = new c_Field_auto_update;
+        $custom_field_auto_update->register();
+        $custom_field_auto_update->field_name = 'auto_update';
+        $custom_field_auto_update->meta_name = 'Auto Update';
 
+    // Mannual Update Field
     use Admin\Custom_meta_yes_no_data_woo_woodmart as c_Field_mannual_update;
-    $custom_field_mannual_update = new c_Field_mannual_update;
-    $custom_field_mannual_update->register();
-    $custom_field_mannual_update->field_name = 'mannual_update';
-    $custom_field_mannual_update->meta_name = 'Mannual Update';
+        $custom_field_mannual_update = new c_Field_mannual_update;
+        $custom_field_mannual_update->register();
+        $custom_field_mannual_update->field_name = 'mannual_update';
+        $custom_field_mannual_update->meta_name = 'Mannual Update';
+
+
