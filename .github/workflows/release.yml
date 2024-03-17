@@ -1,51 +1,21 @@
+# Name of the workflow
 name: Release
 
+# Run on every commit tag which begins with "v" (e.g., "v0.1.4")
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "v*"
 
+# Automatically create a GitHub Release, with release details specified (the relevant commits)
 jobs:
   release:
-    name: Create Release and Upload Repository as Zip
-    if: contains(github.ref, 'refs/heads/main') && contains(github.event.head_commit.message, 'v') && contains(github.event.head_commit.message, '.')  # Only run if pushing to main branch and commit message contains 'v' and '.'
-    runs-on: ubuntu-latest
-
+    name: "Release"
+    runs-on: "ubuntu-latest"
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ github.event.head_commit.message }}  # Use the commit message as the tag name
-          release_name: ${{ github.event.head_commit.message }}  # Use the commit message as the release name
-          body: |
-            Changes in this release:
-            - Release by Al Mamun - asifulmamun
-          draft: false
+          repo_token: "${{ secrets.WP_PREMIUM_TOKEN }}"
           prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.WP_PREMIUM_TOKEN }}
 
-      - name: Exclude Files and Create Zip
-        run: |
-          zip -r repo.zip . -x "composer.json" "composer.lock"
 
-      - name: Upload Repository as Zip
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: repo.zip
-          asset_name: repo.zip
-          asset_content_type: application/zip
-          
