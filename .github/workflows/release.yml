@@ -28,10 +28,8 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          # tag_name: ${{ github.ref }}
-          tag_name: Release
-          # release_name: Release ${{ github.ref }}
-          release_name: Release
+          tag_name: ${{ github.ref }}  # Set tag_name to the git tag that triggered the workflow
+          release_name: ${{ github.ref }}  # Set release_name to the git tag that triggered the workflow
           body: |
             Changes in this release:
             - Release by Al Mamun - asifulmamun
@@ -40,10 +38,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.WP_PREMIUM_TOKEN }}
 
-
       - name: Exclude Files and Create Zip
         run: |
           zip -r repo.zip . -x "composer.json" "composer.lock"
+
       - name: Upload Repository as Zip
         uses: actions/upload-release-asset@v1
         with:
