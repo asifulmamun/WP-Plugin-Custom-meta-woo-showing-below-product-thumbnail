@@ -157,9 +157,9 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
  * @package wp-premium.org 
  */
 
-    use Frontend\Custom_woo_singe_p_header as CustomHeaderWoo;
-    $ch_woo_header = new CustomHeaderWoo;
-    $ch_woo_header->register();
+    use Frontend\Customize_woo_single_page as CustomSectionWOOsingle;
+    $cs_woo_single = new CustomSectionWOOsingle;
+    $cs_woo_single->register();
 
 
 

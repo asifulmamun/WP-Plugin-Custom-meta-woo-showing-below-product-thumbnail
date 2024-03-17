@@ -2,40 +2,10 @@
 
 namespace Frontend;
 
-
-use Frontend\Custom_breadcrumb as CB; // Custom BreadCrumb
-
-if (!class_exists('Custom_woo_singe_p_header')) {
-    class Custom_woo_singe_p_header {
-
-        private $custom_breadcrumb;
-
+if(!class_exists('Mini_Status_woo_header')){
+    class Mini_Status_woo_header {
+        public static function mini_status() {?>
         
-        public function register() {
-
-            // Remove default WooCommerce breadcrumbs
-            remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
-    
-
-            // Add custom breadcrumbs
-            add_action('woocommerce_before_main_content', array(__CLASS__, 'custom_woocommerce_breadcrumb'), 20);
-    
-            
-            // Add custom breadcrumbs
-            add_action('woocommerce_before_main_content', array($this, 'custom_woocommerce_breadcrumbs'), 20);
-        }
-
-        // Custom Breadcrumb
-        public static function custom_woocommerce_breadcrumb() {
-
-            CB::custom_woocommerce_breadcrumb();
-        }
-
-        public function custom_woocommerce_breadcrumbs() {?>
-        
-        
-
-
             <!-- Product Mini Status -->
             <section class="container product_mini_status">
                 <ul class="row">
@@ -75,26 +45,7 @@ if (!class_exists('Custom_woo_singe_p_header')) {
             </section>
             <!-- / Product Mini Status -->
 
-
-
-
-
             <style>
-                /* Global */
-                :root{
-                    --custom_breadcrumb_text_color: #fff;
-                    
-                    --custom_secondary_color: #7558a2;
-                    --custom_secondary_txt: gray;
-                    --custom_optional_color: red;
-
-                }
-                ul{
-                    list-style: none;
-                }
-
-
-
                 /* Product Mini Status */
                 .product_mini_status{
                     padding: 2rem .8rem;
@@ -117,8 +68,7 @@ if (!class_exists('Custom_woo_singe_p_header')) {
                     color: var(--custom_optional_color);
                 }
             </style>
-
-        
+            
         <?php }
     }
 }
