@@ -41,7 +41,8 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: |
-            ./path/to/your/asset
-            !./path/to/exclude/folder
+            !composer.lock
+            !composer.json
+            !.gitignore
           asset_name: asset_filename.ext
           asset_content_type: application/octet-stream
