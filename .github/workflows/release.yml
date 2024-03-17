@@ -4,8 +4,6 @@ on:
   push:
     tags:
       - 'v*.*.*'   # Trigger on tags in the format v1.2.3
-    branches:
-      - main      # Trigger only when pushing to the main branch
 
 jobs:
   release:
@@ -26,10 +24,11 @@ jobs:
 
       - name: Create Release
         id: create_release
+        if: startsWith(github.ref, 'refs/tags/v')  # Only create release if pushing a tag in the specified format
         uses: actions/create-release@v1
         with:
-          tag_name: ${{ github.ref }}  # Set tag_name to the git tag that triggered the workflow
-          release_name: ${{ github.ref }}  # Set release_name to the git tag that triggered the workflow
+          tag_name: ${{ github.ref }}  # Use the tag name as provided by the trigger event
+          release_name: ${{ github.ref }}  # Use the tag name as provided by the trigger event
           body: |
             Changes in this release:
             - Release by Al Mamun - asifulmamun
@@ -43,6 +42,7 @@ jobs:
           zip -r repo.zip . -x "composer.json" "composer.lock"
 
       - name: Upload Repository as Zip
+        if: startsWith(github.ref, 'refs/tags/v')  # Only upload zip file if pushing a tag in the specified format
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
