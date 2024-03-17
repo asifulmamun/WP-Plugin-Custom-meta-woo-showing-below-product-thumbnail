@@ -9,7 +9,7 @@ on:
 
 jobs:
   release:
-    name: Create Release
+    name: Create Release and Upload Repository as Zip
     runs-on: ubuntu-latest
 
     steps:
@@ -32,17 +32,19 @@ jobs:
           release_name: Release ${{ github.ref }}
           body: |
             Changes in this release:
-            - Add your release notes here
+            - Release ${{ github.ref }} by Al Mamun - asifulmamun
           draft: false
           prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.WP_PREMIUM_TOKEN }}
 
-      - name: Upload assets
+      - name: Exclude Files and Create Zip
+        run: |
+          zip -r repo.zip . -x "composer.json" "composer.lock"
+      - name: Upload Repository as Zip
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: |
-            !composer.lock
-            !composer.json
-            !.gitignore
-          asset_name: asset_filename.ext
-          asset_content_type: application/octet-stream
+          asset_path: repo.zip
+          asset_name: repo.zip
+          asset_content_type: application/zip
