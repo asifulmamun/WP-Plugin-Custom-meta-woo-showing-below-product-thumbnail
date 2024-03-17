@@ -33,10 +33,6 @@
 */
 
 
-// namespace Admin\Inc;
-
-
-
 if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 	/**

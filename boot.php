@@ -26,30 +26,11 @@ function activate_render_3d() {
 register_activation_hook(__FILE__, 'activate_render_3d');
 
 
-// TMPA Check
-
-// use Admin\Inc\TGM_Plugin_Activation;
-// // new TGM_Plugin_Activation;
-
-// use Admin\Inc\Tgmpa_wp_premium as TGMPA_wp;
-// $tg = new TGMPA_wp;
-// $tg->register();
-
-
-
+// TMPA
 require_once dirname( __FILE__ ) . '/Admin/Inc/TGM_Plugin_Activation.php';
-require_once dirname( __FILE__ ) . '/Admin/Inc/Tgmpa_wp_premium.php';
-
-
-
-
-
-
-
-
-
-
-
+use Admin\Inc\Tgmpa_wp_premium as TGMPA_wp;
+$tg = new TGMPA_wp;
+$tg->register();
 
 
 
