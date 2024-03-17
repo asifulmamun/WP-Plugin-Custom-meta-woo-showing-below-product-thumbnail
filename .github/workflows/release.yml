@@ -38,6 +38,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.WP_PREMIUM_TOKEN }}
 
+
       - name: Exclude Files and Create Zip
         run: |
           zip -r repo.zip . -x "composer.json" "composer.lock"
