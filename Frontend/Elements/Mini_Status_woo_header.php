@@ -1,6 +1,6 @@
 <?php
 
-namespace Frontend;
+namespace Frontend\Elements;
 
 if(!class_exists('Mini_Status_woo_header')){
     class Mini_Status_woo_header {

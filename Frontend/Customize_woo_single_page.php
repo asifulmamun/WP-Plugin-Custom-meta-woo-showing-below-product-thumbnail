@@ -3,8 +3,8 @@
 namespace Frontend;
 
 
-use Frontend\Custom_breadcrumb as CB; // Custom BreadCrumb
-use Frontend\Mini_Status_woo_header as MSWH; // Custom Mini Status
+use Frontend\Elements\Custom_breadcrumb as CB; // Custom BreadCrumb
+use Frontend\Elements\Mini_Status_woo_header as MSWH; // Custom Mini Status
 
 
 if (!class_exists('Customize_woo_single_page')) {

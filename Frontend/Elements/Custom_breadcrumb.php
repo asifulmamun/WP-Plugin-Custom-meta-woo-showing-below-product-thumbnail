@@ -1,6 +1,6 @@
 <?php
 
-namespace Frontend;
+namespace Frontend\Elements;
 
 if(!class_exists('Custom_breadcrumb')){
     class Custom_breadcrumb {
