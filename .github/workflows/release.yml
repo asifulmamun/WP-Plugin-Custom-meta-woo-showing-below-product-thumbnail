@@ -28,11 +28,13 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          # tag_name: ${{ github.ref }}
+          tag_name: Release
+          # release_name: Release ${{ github.ref }}
+          release_name: Release
           body: |
             Changes in this release:
-            - Release ${{ github.ref }} by Al Mamun - asifulmamun
+            - Release by Al Mamun - asifulmamun
           draft: false
           prerelease: false
         env:
