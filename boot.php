@@ -157,9 +157,9 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
  * @package wp-premium.org 
  */
 
-    use Frontend\Custom_breadcrumb as BreadCrmbOff;
-    $bc = new BreadCrmbOff;
-    $bc->register();
+    use Frontend\Custom_woo_singe_p_header as CustomHeaderWoo;
+    $ch_woo_header = new CustomHeaderWoo;
+    $ch_woo_header->register();
 
 
 
