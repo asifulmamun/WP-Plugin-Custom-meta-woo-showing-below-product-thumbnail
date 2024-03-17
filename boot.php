@@ -153,7 +153,7 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
 
 
 /**
- * Hide default breadcrumbs
+ * Custom Section
  * @package wp-premium.org 
  */
 
