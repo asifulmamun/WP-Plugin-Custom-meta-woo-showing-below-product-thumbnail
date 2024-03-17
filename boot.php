@@ -149,3 +149,19 @@ register_deactivation_hook(__FILE__, 'deactivate_render_3d');
     $upo->register();
     $upo->field_name = 'custom_product_update_on';
     $upo->meta_name = 'Update On';
+
+
+
+/**
+ * Hide default breadcrumbs
+ * @package wp-premium.org 
+ */
+
+    use Frontend\Custom_breadcrumb as BreadCrmbOff;
+    $bc = new BreadCrmbOff;
+    $bc->register();
+
+
+
+
+
