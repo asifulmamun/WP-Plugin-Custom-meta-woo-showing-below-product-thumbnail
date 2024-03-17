@@ -1,6 +1,7 @@
 <?php
 
 namespace Frontend\Elements;
+use Frontend\Data\Get_meta as GM;
 
 if(!class_exists('Mini_Status_woo_header')){
     class Mini_Status_woo_header {
@@ -10,19 +11,72 @@ if(!class_exists('Mini_Status_woo_header')){
             <section class="container product_mini_status">
                 <ul class="row">
 
+                    
 
                     <li class="col-6 col-lg-3 col-md-3">
                         <img src="https://i.postimg.cc/MTYbBMPP/Screenshot-from-2024-03-15-00-28-42.png" alt="Auto Update">
                         <div class="mini_status_desc">
                             <div>Auto Update</div>
-                            <div><a target="_blank" href="/how-to-update/">Yes (1 Year)?</a></div>
+                            <div>
+                                <a target="_blank" href="/how-to-update/">
+                                    <?php
+                                        $au = GM::get_meta('auto_update'); // field - auto_update
+                                        preg_match('/^(\d|[^0-9])/', $au, $matches); // Match the pattern against the meta_value
+
+                                        // Status Check and data Devide
+                                        if (isset($matches[0])) {
+                                            
+                                            $status = $matches[0]; // If a match is found, extract the first digit/character
+                                            $status_data = substr($au, strlen($status)); // Now, extract all characters after the first digit/character
+                                        } else {
+                                            
+                                            $status = 0;
+                                            $status_data = '';
+                                        }
+                                        // Status Print
+                                        if($status == 1){
+
+                                            echo 'Yes';
+                                            echo ", $status_data ?"; // Extra Text - DATA
+                                        } else{
+                                            echo 'No';
+                                        }
+                                    ?>
+                                </a>
+                            </div>
                         </div>
                     </li>
                     <li class="col-6 col-lg-3 col-md-3">
                         <img src="https://i.postimg.cc/MTYbBMPP/Screenshot-from-2024-03-15-00-28-42.png" alt="Auto Update">
                         <div class="mini_status_desc">
                             <div>Mannual Update</div>
-                            <div><a target="_blank" href="/how-to-update-manually/">Yes (1 Year)?</a></div>
+                            <div>
+                                <a target="_blank" href="/how-to-update-manually/">
+                                <?php
+                                        $mu = GM::get_meta('mannual_update'); // field - mannual_update
+                                        preg_match('/^(\d|[^0-9])/', $mu, $matches); // Match the pattern against the meta_value
+
+                                        // Status Check and data Devide
+                                        if (isset($matches[0])) {
+                                            
+                                            $status = $matches[0]; // If a match is found, extract the first digit/character
+                                            $status_data = substr($mu, strlen($status)); // Now, extract all characters after the first digit/character
+                                        } else {
+                                            
+                                            $status = 0;
+                                            $status_data = '';
+                                        }
+                                        // Status Print
+                                        if($status == 1){
+
+                                            echo 'Yes';
+                                            echo ", $status_data ?"; // Extra Text - DATA
+                                        } else{
+                                            echo 'No';
+                                        }
+                                    ?>
+                                </a>
+                            </div>
                         </div>
                     </li>
 
@@ -30,7 +84,11 @@ if(!class_exists('Mini_Status_woo_header')){
                         <img src="https://i.postimg.cc/hj38MWnT/Screenshot-from-2024-03-15-00-44-35.png" alt="Auto Update">
                         <div class="mini_status_desc">
                             <div>Version</div>
-                            <div>20.0.2 <sup><a target="_blank" href="/contact-version">Update?</a></sup></div>
+                            <div>
+                                <?php echo GM::get_meta('product_version'); // field ?>
+                                </a>
+                                <sup><a target="_blank" href="/contact-version">Update?</a></sup>
+                            </div>
                         </div>
                     </li>
                     
@@ -38,7 +96,15 @@ if(!class_exists('Mini_Status_woo_header')){
                         <img src="https://i.postimg.cc/pV4YFHqt/Screenshot-from-2024-03-15-00-45-15.png" alt="Auto Update">
                         <div class="mini_status_desc">
                             <div>Update On</div>
-                            <div>March 14, 2024</div>
+                            <div>
+                            <?php
+
+                                $uo = GM::get_meta('custom_product_update_on'); // field
+                                $dateTime = new \DateTime($uo);
+                                echo $dateTime->format('F d, Y'); // Output: March 23, 2024
+                            
+                            ?>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -72,5 +138,3 @@ if(!class_exists('Mini_Status_woo_header')){
         <?php }
     }
 }
-
-
