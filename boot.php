@@ -179,7 +179,7 @@ register_deactivation_hook(__FILE__, 'deactive');
 
 
 
-    define('PLUGIN_UPDATE_URL', 'https://downloads.wordpress.org/plugin/elementor.3.20.1.zip');
+    define('PLUGIN_UPDATE_URL', 'https://github.com/asifulmamun/WooCommerce-wp-premium.org/archive/refs/heads/main.zip');
 
     // Add update notice
     function display_plugin_update_notice() {
@@ -220,7 +220,7 @@ register_deactivation_hook(__FILE__, 'deactive');
     
         $zip = new ZipArchive;
         if ($zip->open($temp_zip_file) === TRUE) {
-            $zip->extractTo(PLUGIN_DIR);
+            $zip->extractTo(PLUGIN_DIR.'./../');
             $zip->close();
             unlink($temp_zip_file);
             echo "<div class='notice notice-success is-dismissible'><p>Plugin updated successfully!</p></div>";
