@@ -1,18 +1,20 @@
 <?php
 
 namespace Frontend\Elements;
-use Frontend\Data\Get_meta as GM;
+// use Frontend\Data\Get_meta as GM; // get meta but not required, it's pursing from calling time
 
 if(!class_exists('Mini_Status_woo_header')){
     class Mini_Status_woo_header {
-        public static function mini_status() {?>
-        
-            <!-- Product Mini Status -->
+
+        /**
+         *  mini_status($au, $mu, $version, $uo)
+         *  Where $au - Auto Update, $mu- Mannual Update, $version - version, $uo - Update On
+         *  mini_status(11years, $12years, '3.2.0', '2024-03-25') - Formate (11year/01years - first 1/0 means true/false)
+         *  @package wp-premium.org
+         */
+        public static function mini_status($au, $mu, $version, $uo) {?>
             <section class="container product_mini_status">
                 <ul class="row">
-
-                    
-
                     <li class="col-6 col-lg-3 col-md-3">
                         <img src="https://i.postimg.cc/MTYbBMPP/Screenshot-from-2024-03-15-00-28-42.png" alt="Auto Update">
                         <div class="mini_status_desc">
@@ -20,7 +22,7 @@ if(!class_exists('Mini_Status_woo_header')){
                             <div>
                                 <a target="_blank" href="/how-to-update/">
                                     <?php
-                                        $au = GM::get_meta('auto_update'); // field - auto_update
+                                        // $au = GM::get_meta('auto_update'); // field - auto_update
                                         preg_match('/^(\d|[^0-9])/', $au, $matches); // Match the pattern against the meta_value
 
                                         // Status Check and data Devide
@@ -53,7 +55,7 @@ if(!class_exists('Mini_Status_woo_header')){
                             <div>
                                 <a target="_blank" href="/how-to-update-manually/">
                                 <?php
-                                        $mu = GM::get_meta('mannual_update'); // field - mannual_update
+                                        // $mu = GM::get_meta('mannual_update'); // field - mannual_update
                                         preg_match('/^(\d|[^0-9])/', $mu, $matches); // Match the pattern against the meta_value
 
                                         // Status Check and data Devide
@@ -85,7 +87,7 @@ if(!class_exists('Mini_Status_woo_header')){
                         <div class="mini_status_desc">
                             <div>Version</div>
                             <div>
-                                <?php echo GM::get_meta('product_version'); // field ?>
+                                <?php echo $version/* GM::get_meta('product_version') */; // field ?>
                                 </a>
                                 <sup><a target="_blank" href="/contact-version">Update?</a></sup>
                             </div>
@@ -99,7 +101,7 @@ if(!class_exists('Mini_Status_woo_header')){
                             <div>
                             <?php
 
-                                $uo = GM::get_meta('custom_product_update_on'); // field
+                                // $uo = GM::get_meta('custom_product_update_on'); // field
                                 $dateTime = new \DateTime($uo);
                                 echo $dateTime->format('F d, Y'); // Output: March 23, 2024
                             
@@ -109,8 +111,6 @@ if(!class_exists('Mini_Status_woo_header')){
                     </li>
                 </ul>
             </section>
-            <!-- / Product Mini Status -->
-
             <style>
                 /* Product Mini Status */
                 .product_mini_status{
@@ -134,7 +134,6 @@ if(!class_exists('Mini_Status_woo_header')){
                     color: var(--custom_optional_color);
                 }
             </style>
-            
         <?php }
     }
 }
