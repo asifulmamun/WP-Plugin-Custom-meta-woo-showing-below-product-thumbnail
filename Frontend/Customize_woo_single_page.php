@@ -26,16 +26,19 @@ if (!class_exists('Customize_woo_single_page')) {
 
         // Custom Breadcrumb
         public static function custom_section_as_header() {
-
-            CB::custom_woocommerce_breadcrumb(); // Custom BreadCrumbs
-
+            if (is_product()) {
+                
+                CB::custom_woocommerce_breadcrumb(); // Custom BreadCrumbs
+            }
             /**
              *  mini_status($au, $mu, $version, $uo)
              *  Where $au - Auto Update, $mu- Mannual Update, $version - version, $uo - Update On
              *  mini_status(11years, $12years, '3.2.0', '2024-03-25') - Formate (11year/01years - first 1/0 means true/false)
              *  @package wp-premium.org
              */
-            MSWH::mini_status(GM::get_meta('auto_update'), GM::get_meta('mannual_update'), GM::get_meta('product_version'), GM::get_meta('custom_product_update_on')); // Custom Mini Status Woo Header
+            if (is_product() && has_term('Meat', 'product_cat')) {
+                MSWH::mini_status(GM::get_meta('auto_update'), GM::get_meta('mannual_update'), GM::get_meta('product_version'), GM::get_meta('custom_product_update_on')); // Custom Mini Status Woo Header
+            }
         }
 
 

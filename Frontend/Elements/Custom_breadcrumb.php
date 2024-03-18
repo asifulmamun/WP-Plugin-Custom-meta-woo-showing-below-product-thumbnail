@@ -49,6 +49,7 @@ if(!class_exists('Custom_breadcrumb')){
                 .custom_breadcrumbs {
                     background-image: url("https://wp-premium.org/wp-content/uploads/2021/09/digitals-newslatter-bg.jpg");
                     padding: 3rem .8rem;
+                    margin-bottom: 1rem;
                 }
 
                 .product_title {
