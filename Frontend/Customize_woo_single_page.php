@@ -17,11 +17,11 @@ if (!class_exists('Customize_woo_single_page')) {
             remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20); // Remove default WooCommerce breadcrumbs
             add_action('woocommerce_before_main_content', array($this, 'global_woo_single'), 20); // woo_product_single_header
 
-            add_action('woocommerce_before_main_content', array(__CLASS__, 'custom_section_as_header'), 20); // custom_woocommerce_breadcrumb
-            
-            add_action('woocommerce_before_add_to_cart_button', array(__CLASS__, 'custom_section_before_add_to_cart'));
 
-        
+            add_action('woocommerce_before_main_content', array(__CLASS__, 'custom_section_as_header'), 20); // custom_woocommerce_breadcrumb
+            add_action('woocommerce_before_add_to_cart_button', array(__CLASS__, 'custom_section_before_add_to_cart'));
+            add_action('woocommerce_after_single_product_summary', array(__CLASS__, 'custom_section_after_additional_info_and_reviews'), 25);
+            
         }
 
         // Custom Breadcrumb
@@ -39,9 +39,24 @@ if (!class_exists('Customize_woo_single_page')) {
         }
 
 
+        // Before Add to Cart
         public static function custom_section_before_add_to_cart(){
+            
+            // If the hash file are exist
+            if(GM::get_meta('vt_data') !== null){
 
-            VT::virus_status_btn_before_add_to_cart_single_page();
+                VT::virus_status_btn_before_add_to_cart_single_page();
+            }
+        }
+
+
+        // After product desc/summery
+        public static function custom_section_after_additional_info_and_reviews(){
+            // If the hash file are exist
+            if(GM::get_meta('vt_data') !== null){
+
+                VT::after_pdocut_summery_or_desc(GM::get_meta('vt_data'));
+            }
         }
 
 
@@ -53,7 +68,7 @@ if (!class_exists('Customize_woo_single_page')) {
                 /* Global */
                 :root{
                     --custom_breadcrumb_text_color: #fff;
-                    
+                    --virus_total_primary_color: green;
                     --custom_secondary_color: #7558a2;
                     --custom_secondary_txt: gray;
                     --custom_optional_color: red;

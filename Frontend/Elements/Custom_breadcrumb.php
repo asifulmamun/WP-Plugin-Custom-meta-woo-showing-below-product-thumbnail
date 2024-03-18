@@ -9,7 +9,7 @@ if(!class_exists('Custom_breadcrumb')){
             <!-- Breadcrumbs -->
             <div class="container-fluid custom_breadcrumbs">
                 <div class="row">
-                    <div class="col-lg-12 col-12 col-md-12 text-center" style="">
+                    <div class="text-center col-lg-12 col-12 col-md-12">
                         <?php
                             
                             // Product Title
@@ -35,9 +35,8 @@ if(!class_exists('Custom_breadcrumb')){
                                 $custom_breadcrumbs = '<a href="' . get_home_url() . '">Home</a>';
                                 $custom_breadcrumbs .= ' / ';
                                 $custom_breadcrumbs .= '<a href="' . get_term_link($product_cat) . '">' . $product_cat->name . '</a>';
-                                echo get_the_title() . '<br/>';
+                                echo "<h1>". get_the_title() ."</h1>" . $custom_breadcrumbs;
 
-                                echo $custom_breadcrumbs;
                             }
                         ?>
                     </div>
