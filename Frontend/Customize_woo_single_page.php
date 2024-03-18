@@ -36,7 +36,8 @@ if (!class_exists('Customize_woo_single_page')) {
              *  mini_status(11years, $12years, '3.2.0', '2024-03-25') - Formate (11year/01years - first 1/0 means true/false)
              *  @package wp-premium.org
              */
-            if (is_product() && has_term('Meat', 'product_cat')) {
+            if (is_product() && (has_term('wordpress-themes', 'product_cat') || has_term('wordpress-plugins', 'product_cat'))) {
+                
                 MSWH::mini_status(GM::get_meta('auto_update'), GM::get_meta('mannual_update'), GM::get_meta('product_version'), GM::get_meta('custom_product_update_on')); // Custom Mini Status Woo Header
             }
         }
@@ -79,6 +80,17 @@ if (!class_exists('Customize_woo_single_page')) {
                 }
                 ul{
                     list-style: none;
+                }
+
+                /* display */
+                .d_none{
+                    display: none !important;
+                }
+                .d_block{
+                    display: block !important;
+                }
+                .d_visible{
+                    display: visible !important;
                 }
             </style>
         <?php }

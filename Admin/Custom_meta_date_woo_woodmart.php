@@ -44,6 +44,14 @@
                     $render_form .= '</li>';
                 $render_form .= '</ul>';
 
+                // Add JavaScript to set today's date as default and make it changeable
+                // $render_form .= '<script>';
+                // $render_form .= 'document.addEventListener("DOMContentLoaded", function() {';
+                // $render_form .= 'var dateInput = document.getElementById("'. $this->field_name .'");';
+                // $render_form .= 'dateInput.valueAsDate = new Date();'; // Set default value to today
+                // $render_form .= '});';
+                // $render_form .= '</script>';
+
                 echo $render_form;
             }
 
@@ -53,7 +61,8 @@
                         
                         // Save the value
                         $meta_value = isset($_POST[$this->field_name]) ? sanitize_text_field($_POST[$this->field_name]) : '';
-                     
+                    
+
                         update_post_meta($post_id, $this->field_name, $meta_value); // field
                     }
             }

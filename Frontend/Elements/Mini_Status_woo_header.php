@@ -28,6 +28,9 @@ if(!class_exists('Mini_Status_woo_header')){
                                 <a target="_blank" href="/how-to-update/">
                                     <?php
                                         // $au = GM::get_meta('auto_update'); // field - auto_update
+                                        if($au == null){
+                                            $au = 0;
+                                        }
                                         preg_match('/^(\d|[^0-9])/', $au, $matches); // Match the pattern against the meta_value
 
                                         // Status Check and data Devide
@@ -66,6 +69,9 @@ if(!class_exists('Mini_Status_woo_header')){
                                 <a target="_blank" href="/how-to-update-manually/">
                                 <?php
                                         // $mu = GM::get_meta('mannual_update'); // field - mannual_update
+                                        if($mu == null){
+                                            $mu = 0;
+                                        }
                                         preg_match('/^(\d|[^0-9])/', $mu, $matches); // Match the pattern against the meta_value
 
                                         // Status Check and data Devide
@@ -92,7 +98,7 @@ if(!class_exists('Mini_Status_woo_header')){
                         </div>
                     </li>
 
-                    <li class="col-6 col-lg-3 col-md-3">
+                    <li class="col-6 col-lg-3 col-md-3 <?php if($version == null){echo 'd_none';} ?>">
                         <!-- <img src="https://i.postimg.cc/hj38MWnT/Screenshot-from-2024-03-15-00-44-35.png" alt="Auto Update"> -->
                         <span class="mini_status_ic">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -102,14 +108,20 @@ if(!class_exists('Mini_Status_woo_header')){
                         <div class="mini_status_desc">
                             <div>Version</div>
                             <div>
-                                <?php echo $version/* GM::get_meta('product_version') */; // field ?>
+                                <?php
+
+                                    if($version == null){
+                                        $version = '0.0.0';
+                                    }
+                                    echo $version/* GM::get_meta('product_version') */; // field 
+                                ?>
                                 </a>
                                 <sup><a target="_blank" href="/contact-version">Update?</a></sup>
                             </div>
                         </div>
                     </li>
                     
-                    <li class="col-6 col-lg-3 col-md-3">
+                    <li class="col-6 col-lg-3 col-md-3 <?php if($uo == null){echo 'd_none';} ?>">
                         <!-- <img src="https://i.postimg.cc/pV4YFHqt/Screenshot-from-2024-03-15-00-45-15.png" alt="Auto Update"> -->
                         <span class="mini_status_ic">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -122,9 +134,10 @@ if(!class_exists('Mini_Status_woo_header')){
                             <?php
 
                                 // $uo = GM::get_meta('custom_product_update_on'); // field
-                                $dateTime = new \DateTime($uo);
-                                echo $dateTime->format('F d, Y'); // Output: March 23, 2024
-                            
+                                if($uo !== null){
+                                    $dateTime = new \DateTime($uo);
+                                    echo $dateTime->format('F d, Y'); // Output: March 23, 2024
+                                }
                             ?>
                             </div>
                         </div>
@@ -133,6 +146,7 @@ if(!class_exists('Mini_Status_woo_header')){
             </section>
             <style>
                 /* Product Mini Status */
+                
                 .product_mini_status{
                     padding: 2rem .8rem;
                 }
