@@ -3,7 +3,7 @@
 Plugin Name: wp-premium.org
 Plugin URI: https://github.com/asifulmamun/WooCommerce-wp-premium.org
 Description: This is the custom meta box, where user can add meta from product edit page and it will be showing below the product thumbnail, this plugin inspiration by https://wp-premium.org
-Version: 2.0.0
+Version: 1.0.0
 Author: Al Mamun - asifulmamun
 Author URI: https://asifulmamun.info.bd
 */
@@ -34,7 +34,7 @@ $tg->register();
 
 
 // Tepm Test
-require_once PLUGIN_DIR . 'temp.php';
+// require_once PLUGIN_DIR . 'temp.php';
 
 
 // Deactivation hook
@@ -108,18 +108,18 @@ register_deactivation_hook(__FILE__, 'deactive');
  */
 
     //  Auto update field
-    use Admin\Custom_meta_yes_no_data_woo_woodmart as c_Field_auto_update;
-        $custom_field_auto_update = new c_Field_auto_update;
-        $custom_field_auto_update->register();
-        $custom_field_auto_update->field_name = 'auto_update';
-        $custom_field_auto_update->meta_name = 'Auto Update';
+    // use Admin\Custom_meta_yes_no_data_woo_woodmart as c_Field_auto_update;
+    //     $custom_field_auto_update = new c_Field_auto_update;
+    //     $custom_field_auto_update->register();
+    //     $custom_field_auto_update->field_name = 'auto_update';
+    //     $custom_field_auto_update->meta_name = 'Auto Update';
 
     // Mannual Update Field
-    use Admin\Custom_meta_yes_no_data_woo_woodmart as c_Field_mannual_update;
-        $custom_field_mannual_update = new c_Field_mannual_update;
-        $custom_field_mannual_update->register();
-        $custom_field_mannual_update->field_name = 'mannual_update';
-        $custom_field_mannual_update->meta_name = 'Mannual Update';
+    // use Admin\Custom_meta_yes_no_data_woo_woodmart as c_Field_mannual_update;
+    //     $custom_field_mannual_update = new c_Field_mannual_update;
+    //     $custom_field_mannual_update->register();
+    //     $custom_field_mannual_update->field_name = 'mannual_update';
+    //     $custom_field_mannual_update->meta_name = 'Mannual Update';
 
 
 
@@ -130,19 +130,19 @@ register_deactivation_hook(__FILE__, 'deactive');
  */
 
     // Version
-    use Admin\Custom_meta_text_woo_woodmart as c_Version;
-        $custom_post_version = new c_Version;
-        $custom_post_version->register();
-        $custom_post_version->field_name = 'product_version';
-        $custom_post_version->meta_name = 'Version';
+    // use Admin\Custom_meta_text_woo_woodmart as c_Version;
+    //     $custom_post_version = new c_Version;
+    //     $custom_post_version->register();
+    //     $custom_post_version->field_name = 'product_version';
+    //     $custom_post_version->meta_name = 'Version';
 
 
     // Virus Total Hash File
-    use Admin\Custom_meta_text_woo_woodmart as Virus_total;
-        $vt = new Virus_total;
-        $vt->register();
-        $vt->field_name = 'vt_data';
-        $vt->meta_name = 'Virus Total Hash File';
+    // use Admin\Custom_meta_text_woo_woodmart as Virus_total;
+    //     $vt = new Virus_total;
+    //     $vt->register();
+    //     $vt->field_name = 'vt_data';
+    //     $vt->meta_name = 'Virus Total Hash File';
 
 
 
@@ -153,11 +153,11 @@ register_deactivation_hook(__FILE__, 'deactive');
  */
 
     // Update ON
-    use Admin\Custom_meta_date_woo_woodmart as UpdateOn;
-    $upo = new UpdateOn;
-    $upo->register();
-    $upo->field_name = 'custom_product_update_on';
-    $upo->meta_name = 'Update On';
+    // use Admin\Custom_meta_date_woo_woodmart as UpdateOn;
+    // $upo = new UpdateOn;
+    // $upo->register();
+    // $upo->field_name = 'custom_product_update_on';
+    // $upo->meta_name = 'Update On';
 
 
 
@@ -166,9 +166,9 @@ register_deactivation_hook(__FILE__, 'deactive');
  * @package wp-premium.org 
  */
 
-    use Frontend\Customize_woo_single_page as CustomSectionWOOsingle;
-    $cs_woo_single = new CustomSectionWOOsingle;
-    $cs_woo_single->register();
+    // use Frontend\Customize_woo_single_page as CustomSectionWOOsingle;
+    // $cs_woo_single = new CustomSectionWOOsingle;
+    // $cs_woo_single->register();
 
 
 
