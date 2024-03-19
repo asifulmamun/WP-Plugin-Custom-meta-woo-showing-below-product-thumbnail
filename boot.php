@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: wp-premium.org
-Plugin URI: https://github.com/asifulmamun/wp-premium.org
+Plugin URI: https://github.com/asifulmamun/wp-premium.org/tree/release
 Description: This is the custom meta box, where user can add meta from product edit page and it will be showing below the product thumbnail, this plugin inspiration by https://wp-premium.org
 Version: 2.0.0
 Author: Al Mamun - asifulmamun
