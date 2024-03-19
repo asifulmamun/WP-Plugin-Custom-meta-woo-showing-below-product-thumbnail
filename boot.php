@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: wp-premium.org
-Plugin URI: https://github.com/asifulmamun/WooCommerce-wp-premium.org
+Plugin URI: https://github.com/asifulmamun/wp-premium.org
 Description: This is the custom meta box, where user can add meta from product edit page and it will be showing below the product thumbnail, this plugin inspiration by https://wp-premium.org
 Version: 2.0.0
 Author: Al Mamun - asifulmamun
@@ -74,7 +74,7 @@ register_deactivation_hook(__FILE__, 'deactive');
         // btn
         $demo->meta_name_btn_txt = 'Button Name';
         $demo->field_name_btn_submit = 'demo_btn';
-        $demo->field_name_btn_txt = 'Sales Page';
+        $demo->field_name_btn_txt = 'View Demo';
         // Show
         use Frontend\Custom_btn as Demo_btn;
         $demo_btn = new Demo_btn;
