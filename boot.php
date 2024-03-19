@@ -3,7 +3,7 @@
 Plugin Name: wp-premium.org
 Plugin URI: https://github.com/asifulmamun/wp-premium.org
 Description: This is the custom meta box, where user can add meta from product edit page and it will be showing below the product thumbnail, this plugin inspiration by https://wp-premium.org
-Version: 1.5.3
+Version: 1.6.0
 Author: Al Mamun - asifulmamun
 Author URI: https://asifulmamun.info.bd
 */
@@ -76,10 +76,10 @@ register_deactivation_hook(__FILE__, 'deactive');
         $demo->field_name_btn_submit = 'demo_btn';
         $demo->field_name_btn_txt = 'View Demo';
         // Show
-        use Frontend\Custom_btn as Demo_btn;
-        $demo_btn = new Demo_btn;
-        $demo_btn->field = $demo->field_name;
-        $demo_btn->field_name_btn_submit = $demo->field_name_btn_txt;
+        // use Frontend\Custom_btn as Demo_btn;
+        // $demo_btn = new Demo_btn;
+        // $demo_btn->field = $demo->field_name;
+        // $demo_btn->field_name_btn_submit = $demo->field_name_btn_txt;
 
 
     // Video - Dashboard
@@ -93,10 +93,10 @@ register_deactivation_hook(__FILE__, 'deactive');
         $Video->field_name_btn_submit = 'video_btn';
         $Video->field_name_btn_txt = 'Watch Video';
         // show
-        use Frontend\Custom_btn as Video_btn;
-        $video_btn = new Video_btn;
-        $video_btn->field = $Video->field_name;
-        $video_btn->field_name_btn_submit = $Video->field_name_btn_txt;
+        // use Frontend\Custom_btn as Video_btn;
+        // $video_btn = new Video_btn;
+        // $video_btn->field = $Video->field_name;
+        // $video_btn->field_name_btn_submit = $Video->field_name_btn_txt;
 
 
 
