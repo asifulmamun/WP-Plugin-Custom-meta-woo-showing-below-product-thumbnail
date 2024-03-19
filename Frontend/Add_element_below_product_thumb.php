@@ -2,6 +2,7 @@
 
 namespace Frontend;
 
+
 /* 
  * Data Showing
  */
@@ -23,9 +24,33 @@ class Add_element_below_product_thumb {
     
     // Render the HTML element to selected ID
     public function add_elements(){
+        global $product;
         
-        echo $this->new_el_styles;?><style>.woocommerce-product-gallery--with-images{display:flex!important;flex-wrap:wrap!important;}.woocommerce-product-gallery--with-images>div:nth-child(1),.woocommerce-product-gallery--with-images>div:nth-child(1){flex-basis: fit-content;}</style><script type="text/javascript">document.addEventListener('DOMContentLoaded',function(){var galleryWithImages = document.querySelector("<?php echo $this->query_select; ?>");if (galleryWithImages) {var newElement=document.createElement("<?php echo $this->new_el; ?>");newElement.id='<?php echo $this->new_el_id; ?>';newElement.className='<?php echo $this->new_el_className; ?>';newElement.innerHTML='<?php echo $this->new_el_innerHTML; ?>';galleryWithImages.appendChild(newElement);}});</script>
+        $demo_url = $product->get_meta('demo_url');
+        $demo_btn = ($product->get_meta('demo_btn')) ? $product->get_meta('demo_btn') : 'View Demo';
+        
+        $video_url = $product->get_meta('video_url');
+        $video_btn = ($product->get_meta('video_btn')) ? $product->get_meta('video_btn') : 'Watch Video';
+            
 
-    <?php }
+        if(!empty($demo_url)){
+
+            $this->new_el_innerHTML .= '<li><a class="view_demo_btn" href="' . esc_url($demo_url) . '" target="_blank">'. $demo_btn .'</a></li>';
+        }
+        if(!empty($video_url)){
+            
+            $this->new_el_innerHTML .= '<li><a class="view_demo_btn" href="' . esc_url($video_url) . '" target="_blank">'. $video_btn .'</a></li>';
+        }
+        
+        if(!empty($demo_url) || !empty($video_url)){
+
+            // btn CSS
+            $this->new_el_innerHTML .= '<style>.view_demo_btn {padding:.8rem 1rem;border-radius:var(--btn-accented-brd-radius);color:var(--btn-accented-color);box-shadow:var(--btn-accented-box-shadow);background-color:var(--btn-accented-bgcolor);text-transform:var(--btn-accented-transform, var(--btn-transform));font-weight:var(--btn-accented-font-weight, var(--btn-font-weight));font-family:var(--btn-accented-font-family, var(--btn-font-family));font-style:var(--btn-accented-font-style, var(--btn-font-style));order:20;}</style>';
+
+            // Main Element print with child elements
+            echo $this->new_el_styles;?><style>.woocommerce-product-gallery--with-images{display:flex!important;flex-wrap:wrap!important;}.woocommerce-product-gallery--with-images>div:nth-child(1),.woocommerce-product-gallery--with-images>div:nth-child(1){flex-basis: fit-content;}</style><script type="text/javascript">document.addEventListener('DOMContentLoaded',function(){var galleryWithImages = document.querySelector("<?php echo $this->query_select; ?>");if (galleryWithImages) {var newElement=document.createElement("<?php echo $this->new_el; ?>");newElement.id='<?php echo $this->new_el_id; ?>';newElement.className='<?php echo $this->new_el_className; ?>';newElement.innerHTML='<?php echo $this->new_el_innerHTML; ?>';galleryWithImages.appendChild(newElement);}});</script><?php
+        }
+        
+    }
 
 }
