@@ -98,7 +98,7 @@ if(!class_exists('Mini_Status_woo_header')){
                         </div>
                     </li>
 
-                    <li class="col-6 col-lg-3 col-md-3 <?php if($version == null){echo 'd_none';} ?>">
+                    <li class="col-6 col-lg-3 col-md-3">
                         <!-- <img src="https://i.postimg.cc/hj38MWnT/Screenshot-from-2024-03-15-00-44-35.png" alt="Auto Update"> -->
                         <span class="mini_status_ic">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -110,10 +110,11 @@ if(!class_exists('Mini_Status_woo_header')){
                             <div>
                                 <?php
 
-                                    if($version == null){
-                                        $version = '0.0.0';
+                                    if($version != null){
+                                        echo $version/* GM::get_meta('product_version') */; // field 
+                                    } else{
+                                        echo 'N/A';
                                     }
-                                    echo $version/* GM::get_meta('product_version') */; // field 
                                 ?>
                                 </a>
                                 <sup><a target="_blank" href="/contact-version">Update?</a></sup>
@@ -121,7 +122,7 @@ if(!class_exists('Mini_Status_woo_header')){
                         </div>
                     </li>
                     
-                    <li class="col-6 col-lg-3 col-md-3 <?php if($uo == null){echo 'd_none';} ?>">
+                    <li class="col-6 col-lg-3 col-md-3">
                         <!-- <img src="https://i.postimg.cc/pV4YFHqt/Screenshot-from-2024-03-15-00-45-15.png" alt="Auto Update"> -->
                         <span class="mini_status_ic">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -134,9 +135,11 @@ if(!class_exists('Mini_Status_woo_header')){
                             <?php
 
                                 // $uo = GM::get_meta('custom_product_update_on'); // field
-                                if($uo !== null){
+                                if($uo != null){
                                     $dateTime = new \DateTime($uo);
                                     echo $dateTime->format('F d, Y'); // Output: March 23, 2024
+                                } else{
+                                    echo 'N/A';
                                 }
                             ?>
                             </div>

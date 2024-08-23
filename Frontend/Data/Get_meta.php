@@ -19,7 +19,8 @@ if(!class_exists('Get_meta')){
             }
     
             // Get the demo URL from product meta
-            $data = $product->get_meta($field);
+            // $data = $product->get_meta($field);
+            $data = get_post_meta(get_the_ID(), $field, true);
         
             if (!empty($data)){
                 return $data;

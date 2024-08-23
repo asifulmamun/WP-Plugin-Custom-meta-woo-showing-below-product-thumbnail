@@ -36,15 +36,16 @@ if (!class_exists('Customize_woo_single_page')) {
              *  mini_status(11years, $12years, '3.2.0', '2024-03-25') - Formate (11year/01years - first 1/0 means true/false)
              *  @package wp-premium.org
              */
+
+            
             if (is_product() && (has_term('wordpress-themes', 'product_cat') || has_term('wordpress-plugins', 'product_cat'))) {
                 
-                $au         = GM::get_meta('auto_update');
-                $mu         = GM::get_meta('mannual_update');
-                $version    = GM::get_meta('product_version');
-                $uo         = GM::get_meta('custom_product_update_on');
-
-                // MSWH::mini_status($au, $mu, $version, $uo);
-                // MSWH::mini_status('11 year', '12 years', '2.1.2', '2024-05-17');
+                $au         = get_post_meta(get_the_ID(), 'auto_update', true);
+                $mu         = get_post_meta(get_the_ID(), 'mannual_update', true);
+                $version    = get_post_meta(get_the_ID(), 'product_version', true);
+                $uo         = get_post_meta(get_the_ID(), 'custom_product_update_on', true);
+                
+                MSWH::mini_status($au, $mu, $version, $uo);
             }
         }
 
