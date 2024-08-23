@@ -26,6 +26,22 @@
             <?php }// Before Add to cart
 
 
+                public static function after_pdocut_summery_or_descc($data){?>
+                    <div id="virus_total_full_status_wrap">
+                        <?php echo $data; ?>
+                    </div>
+                    <style>
+                        #virus_total_full_status_wrap a{
+                            background-color: var(--virus_total_primary_color);
+                            color: white;
+                        }
+                        #virus_total_full_status_wrap svg{
+                            color: var(--virus_total_primary_color);
+                        }
+                    </style>
+                <?php }// After product desc/summery
+
+
             // After product desc/summery
             public static function after_pdocut_summery_or_desc($data){?>
                 <div id="virus_total_full_status_wrap">

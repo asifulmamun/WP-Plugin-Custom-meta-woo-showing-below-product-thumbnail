@@ -18,29 +18,35 @@ if (!class_exists('Customize_woo_single_page')) {
             add_action('woocommerce_before_main_content', array($this, 'global_woo_single'), 20); // woo_product_single_header
 
 
-            add_action('woocommerce_before_main_content', array(__CLASS__, 'custom_section_as_header'), 20); // custom_woocommerce_breadcrumb
+            // add_action('woocommerce_before_main_content', array(__CLASS__, 'custom_section_as_header'), 20); // custom_woocommerce_breadcrumb
             add_action('woocommerce_before_add_to_cart_button', array(__CLASS__, 'custom_section_before_add_to_cart'));
             add_action('woocommerce_after_single_product_summary', array(__CLASS__, 'custom_section_after_additional_info_and_reviews'), 25);
             
         }
 
-        // Custom Breadcrumb
-        public static function custom_section_as_header() {
-            if (is_product()) {
+        // // Custom Breadcrumb
+        // public static function custom_section_as_header() {
+        //     // if (is_product()) {
                 
-                CB::custom_woocommerce_breadcrumb(); // Custom BreadCrumbs
-            }
-            /**
-             *  mini_status($au, $mu, $version, $uo)
-             *  Where $au - Auto Update, $mu- Mannual Update, $version - version, $uo - Update On
-             *  mini_status(11years, $12years, '3.2.0', '2024-03-25') - Formate (11year/01years - first 1/0 means true/false)
-             *  @package wp-premium.org
-             */
-            if (is_product() && (has_term('wordpress-themes', 'product_cat') || has_term('wordpress-plugins', 'product_cat'))) {
+        //     //     CB::custom_woocommerce_breadcrumb(); // Custom BreadCrumbs
+        //     // }
+        //     /**
+        //      *  mini_status($au, $mu, $version, $uo)
+        //      *  Where $au - Auto Update, $mu- Mannual Update, $version - version, $uo - Update On
+        //      *  mini_status(11years, $12years, '3.2.0', '2024-03-25') - Formate (11year/01years - first 1/0 means true/false)
+        //      *  @package wp-premium.org
+        //      */
+        //     if (is_product() && (has_term('wordpress-themes', 'product_cat') || has_term('wordpress-plugins', 'product_cat'))) {
                 
-                MSWH::mini_status(GM::get_meta('auto_update'), GM::get_meta('mannual_update'), GM::get_meta('product_version'), GM::get_meta('custom_product_update_on')); // Custom Mini Status Woo Header
-            }
-        }
+        //         $au         = GM::get_meta('auto_update');
+        //         $mu         = GM::get_meta('mannual_update');
+        //         $version    = GM::get_meta('product_version');
+        //         $uo         = GM::get_meta('custom_product_update_on');
+
+        //         // MSWH::mini_status($au, $mu, $version, $uo);
+        //         // MSWH::mini_status('11 year', '12 years', '2.1.2', '2024-05-17');
+        //     }
+        // }
 
 
         // Before Add to Cart
@@ -58,7 +64,6 @@ if (!class_exists('Customize_woo_single_page')) {
         public static function custom_section_after_additional_info_and_reviews(){
             // If the hash file are exist
             if(GM::get_meta('vt_data') !== null){
-
                 VT::after_pdocut_summery_or_desc(GM::get_meta('vt_data'));
             }
         }
