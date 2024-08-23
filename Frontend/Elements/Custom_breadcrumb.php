@@ -35,7 +35,7 @@ if(!class_exists('Custom_breadcrumb')){
                                 $custom_breadcrumbs = '<a href="' . get_home_url() . '">Home</a>';
                                 $custom_breadcrumbs .= ' / ';
                                 $custom_breadcrumbs .= '<a href="' . get_term_link($product_cat) . '">' . $product_cat->name . '</a>';
-                                echo "<h1>". get_the_title() ."</h1>" . $custom_breadcrumbs;
+                                echo "<h3>". get_the_title() ."</h3>" . $custom_breadcrumbs;
 
                             }
                         ?>
@@ -57,7 +57,7 @@ if(!class_exists('Custom_breadcrumb')){
                 }
 
                 .custom_breadcrumbs,
-                .custom_breadcrumbs h1,
+                .custom_breadcrumbs h3,
                 .custom_breadcrumbs a {
                     color: var(--custom_breadcrumb_text_color);
                 }
