@@ -26,15 +26,15 @@ function activate() {
 register_activation_hook(__FILE__, 'activate');
 
 
-// TMPA
-require_once dirname( __FILE__ ) . '/Admin/Inc/TGM_Plugin_Activation.php';
-use Admin\Inc\Tgmpa_wp_premium as TGMPA_wp;
-$tg = new TGMPA_wp;
-$tg->register();
+// // TMPA
+// require_once dirname( __FILE__ ) . '/Admin/Inc/TGM_Plugin_Activation.php';
+// use Admin\Inc\Tgmpa_wp_premium as TGMPA_wp;
+// $tg = new TGMPA_wp;
+// $tg->register();
 
 
 // Tepm Test
-require_once PLUGIN_DIR . 'temp.php';
+// require_once PLUGIN_DIR . 'temp.php';
 
 
 // Deactivation hook
@@ -68,18 +68,18 @@ register_deactivation_hook(__FILE__, 'deactive');
     // Demo URL
     use Admin\Custom_meta_btn_link_woo as Demo;
         $demo = new Demo;
-        $demo->meta_name = 'Demo URL';
         $demo->field_desc = 'Enter The Demo URL';
+        $demo->meta_name = 'Demo URL';
         $demo->field_name = 'demo_url';
         // btn
         $demo->meta_name_btn_txt = 'Button Name';
         $demo->field_name_btn_submit = 'demo_btn';
         $demo->field_name_btn_txt = 'View Demo';
         // Show
-        // use Frontend\Custom_btn as Demo_btn;
-        // $demo_btn = new Demo_btn;
-        // $demo_btn->field = $demo->field_name;
-        // $demo_btn->field_name_btn_submit = $demo->field_name_btn_txt;
+        use Frontend\Custom_btn as Demo_btn;
+        $demo_btn = new Demo_btn;
+        $demo_btn->field = $demo->field_name;
+        $demo_btn->field_name_btn_submit = $demo->field_name_btn_txt;
 
 
     // Video - Dashboard
@@ -93,10 +93,10 @@ register_deactivation_hook(__FILE__, 'deactive');
         $Video->field_name_btn_submit = 'video_btn';
         $Video->field_name_btn_txt = 'Watch Video';
         // show
-        // use Frontend\Custom_btn as Video_btn;
-        // $video_btn = new Video_btn;
-        // $video_btn->field = $Video->field_name;
-        // $video_btn->field_name_btn_submit = $Video->field_name_btn_txt;
+        use Frontend\Custom_btn as Video_btn;
+        $video_btn = new Video_btn;
+        $video_btn->field = $Video->field_name;
+        $video_btn->field_name_btn_submit = $Video->field_name_btn_txt;
 
 
 
@@ -175,4 +175,6 @@ register_deactivation_hook(__FILE__, 'deactive');
 
 
 
+
+    
 

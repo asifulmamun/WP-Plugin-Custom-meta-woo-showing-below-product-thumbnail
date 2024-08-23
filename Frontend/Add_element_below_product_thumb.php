@@ -27,20 +27,20 @@ class Add_element_below_product_thumb {
         global $product;
         
         $demo_url = $product->get_meta('demo_url');
-        $demo_btn = ($product->get_meta('demo_btn')) ? $product->get_meta('demo_btn') : 'View Demo';
+        // $demo_btn = ($product->get_meta('demo_btn')) ? $product->get_meta('demo_btn') : 'View Demo';
         
         $video_url = $product->get_meta('video_url');
-        $video_btn = ($product->get_meta('video_btn')) ? $product->get_meta('video_btn') : 'Watch Video';
+        // $video_btn = ($product->get_meta('video_btn')) ? $product->get_meta('video_btn') : 'Watch Video';
             
 
-        if(!empty($demo_url)){
+        // if(!empty($demo_url)){
 
-            $this->new_el_innerHTML .= '<li><a class="view_demo_btn" href="' . esc_url($demo_url) . '" target="_blank">'. $demo_btn .'</a></li>';
-        }
-        if(!empty($video_url)){
+        //     $this->new_el_innerHTML .= '<li><a class="view_demo_btn" href="' . esc_url($demo_url) . '" target="_blank">'. $demo_btn .'</a></li>';
+        // }
+        // if(!empty($video_url)){
             
-            $this->new_el_innerHTML .= '<li><a class="view_demo_btn" href="' . esc_url($video_url) . '" target="_blank">'. $video_btn .'</a></li>';
-        }
+        //     $this->new_el_innerHTML .= '<li><a class="view_demo_btn" href="' . esc_url($video_url) . '" target="_blank">'. $video_btn .'</a></li>';
+        // }
         
         if(!empty($demo_url) || !empty($video_url)){
 
