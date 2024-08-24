@@ -176,5 +176,13 @@ register_deactivation_hook(__FILE__, 'deactive');
 
 
 
-    
+/**
+ * Latest updated products with shortcode
+ * Short Code: [latest_updated_products limit="10"] // where limit is dynamic post loop count
+ * @package wp-premium.org 
+ */
 
+add_action('init', function() {
+    $latest_update_products = new Frontend\LatestUpdateProducts();
+    $latest_update_products->register_shortcode();
+});
