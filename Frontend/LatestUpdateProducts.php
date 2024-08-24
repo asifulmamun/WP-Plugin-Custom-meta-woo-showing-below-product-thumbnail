@@ -28,17 +28,141 @@ if (!class_exists('LatestUpdateProducts')) {
         public static function render_products($query)
         {
             if ($query->have_posts()) {
-                echo '<div class="latest-updated-products">';
-                while ($query->have_posts()) {
-                    $query->the_post();
-                    echo '<div>';
-                    echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
-                    echo '</div>';
-                }
-                echo '</div>';
+                echo '<div id="latest_update_products" class="col-12 col-md-12">'; ?>
+                <div class="lts_update_products_pagination">
+                    <?php
+                        // Pagination
+                        self::render_pagination($query);
+                    ?>
+                </div>
+                <div class="row lts_update_product_header">
+                    <div class="col-3 col-md-3">Thumbnail</div>
+                    <div class="col-5 col-md-5">Product Details</div>
+                    <div class="col-2 col-md-2">Date</div>
+                    <div class="col-2 col-md-2">Download</div>
+                </div>
+                <?php while ($query->have_posts()):
+                    $query->the_post(); ?>
 
-                // Pagination
-                self::render_pagination($query);
+                    <div class="row mb-2 item_lts_update_product">
+                        <div class="col-3 col-md-3">
+                            <a href="<?php echo get_permalink(); ?>">
+                                <?php echo get_the_post_thumbnail(get_the_ID(), 'thumbnail'); ?>
+                            </a>
+                        </div>
+                        <div class="col-5 col-md-5 lts_content">
+                            <a class="title" href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a>
+                            <p><?php echo wp_trim_words(get_the_content(), 20, '...'); ?></p>
+                        </div>
+                        <div class="col-2 col-md-2">
+                            <span title="Updated Date"><?php echo get_the_modified_date('F j, Y', get_the_ID()); ?></span>
+                        </div>
+                        <div class="col-2 col-md-2">
+                            <a class="join_now" href="/membership-plans/">Join Now</a>
+                        </div>
+                    </div>
+                <?php endwhile;
+                echo '</div>';
+                ?>
+                <style>
+                    .lts_update_product_header{
+                        background: #000;
+                        color: #fff;
+                        font-weight: 800;
+                        padding: .6rem 0rem;
+                        border-radius: 3px;
+                    }
+                    .lts_update_product_header>div{
+                        border-right: 1px solid #fff;
+                    }
+                    .lts_update_product_header>div:last-child{
+                        border-right: 0 !important;
+                    }
+                    #latest_update_products{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.4rem;
+                    }
+                    #latest_update_products .item_lts_update_product{
+                        background-color: #ededed;
+                        color: #444444;
+                        padding-top: 1rem;
+                        padding-bottom: 1rem;
+                        align-items: center;
+                        border-radius: 5px;
+                        box-shadow: 5px 3px 11px -2px #1e1d1d;
+                        -ms-box-shadow: 5px 3px 11px -2px #1e1d1d;
+                        -moz-box-shadow: 5px 3px 11px -2px #1e1d1d;
+                        -webkit-box-shadow: 5px 3px 11px -2px #1e1d1d;
+                        -o-box-shadow: 5px 3px 11px -2px #1e1d1d;
+                    }
+                    #latest_update_products .item_lts_update_product a img{
+                        width: 100%;
+                        max-height: 9.3rem;
+                    }
+                    #latest_update_products .item_lts_update_product .lts_content a.title{
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                        margin-bottom: .2rem;
+                    }
+                    .join_now{
+                        background: #000;
+                        color: #fff;
+                        padding: .4rem .8rem;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                        box-shadow: 4px 5px 8px 1px #383131;
+                        -ms-box-shadow: 4px 5px 8px 1px #383131;
+                        -moz-box-shadow: 4px 5px 8px 1px #383131;
+                        -webkit-box-shadow: 4px 5px 8px 1px #383131;
+                        -o-box-shadow: 4px 5px 8px 1px #383131;
+                    }
+                    .join_now:hover{
+                        color: #fff;
+                        border-radius: 0;
+                    }
+                </style>
+                <div class="lts_update_products_pagination">
+                    <?php
+                        // Pagination
+                        self::render_pagination($query);
+                    ?>
+                </div>
+                <style>
+                    .lts_update_products_pagination{
+                        display: block;
+                        margin: 0 auto;
+                        padding: 2rem 0;
+                        color: #1e1d1d;
+                    }
+                    .lts_update_products_pagination .pagination ul{
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        gap: .3rem;
+                    }
+                    .lts_update_products_pagination .pagination ul li{
+                        list-style: none;
+                        flex-grow: 1;
+                        
+                    }
+                    .lts_update_products_pagination .pagination ul li a{
+                        all: unset;
+                        background-color: #000;
+                        color: #fff;
+                        padding: 0.5rem 1rem;
+                        border-radius: 3px;
+                        cursor: pointer;
+                    }
+                    .lts_update_products_pagination .pagination ul li:hover a{
+                        background-color: #fff;
+                        border: 1px solid #000;
+                        color: #000;
+                    }
+                </style>
+
+                <?php
                 
                 // Reset Post Data
                 wp_reset_postdata();
