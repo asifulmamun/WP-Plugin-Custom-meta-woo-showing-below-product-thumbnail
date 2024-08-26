@@ -174,6 +174,7 @@ if (!class_exists('LatestUpdateProducts')) {
                         margin: 0 auto;
                         padding: 2rem 0;
                         color: #1e1d1d;
+                        width: fit-content;
                     }
                     .lts_update_products_pagination .pagination ul{
                         display: flex;
