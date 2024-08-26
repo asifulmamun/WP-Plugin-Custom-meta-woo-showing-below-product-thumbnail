@@ -29,29 +29,29 @@ if (!class_exists('LatestUpdateProducts')) {
         {
             if ($query->have_posts()) {
                 echo '<div id="latest_update_products" class="col-12 col-md-12">'; ?>
-                <div class="row lts_update_product_header">
-                    <div class="col-3 col-md-3">Thumbnail</div>
-                    <div class="col-5 col-md-5">Product Details</div>
-                    <div class="col-2 col-md-2">Date</div>
-                    <div class="col-2 col-md-2">Download</div>
+                <div class="row lts_update_product_header mobile_hide">
+                    <div class="col-md-3 col-lg-3 col-xl-3 mobile_hide">Thumbnail</div>
+                    <div class="col-md-5 col-lg-5 col-xl-5">Product Details</div>
+                    <div class="col-md-2 col-lg-2 col-xl-2">Date</div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mobile_hide">Download</div>
                 </div>
                 <?php while ($query->have_posts()):
                     $query->the_post(); ?>
 
                     <div class="row mb-2 item_lts_update_product">
-                        <div class="col-3 col-md-3">
+                        <div class="col-md-3 col-lg-3 col-xl-3 mobile_hide">
                             <a href="<?php echo get_permalink(); ?>">
                                 <?php echo get_the_post_thumbnail(get_the_ID(), 'medium'); ?>
                             </a>
                         </div>
-                        <div class="col-5 col-md-5 lts_content">
+                        <div class="col-md-5 col-lg-5 col-xl-5 lts_content">
                             <a class="title" href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a>
-                            <p><?php echo wp_trim_words(get_the_content(), 20, '...'); ?></p>
+                            <p class="mobile_hide"><?php echo wp_trim_words(get_the_content(), 20, '...'); ?></p>
                         </div>
-                        <div class="col-2 col-md-2">
+                        <div class="col-md-2 col-lg-2 col-xl-2">
                             <span title="Updated Date"><?php echo get_the_modified_date('F j, Y', get_the_ID()); ?></span>
                         </div>
-                        <div class="col-2 col-md-2">
+                        <div class="col-md-2 col-lg-2 col-xl-2 mobile_hide">
                             <?php
                                 // check login
                                 if ( is_user_logged_in() ){
@@ -151,6 +151,15 @@ if (!class_exists('LatestUpdateProducts')) {
                     .join_now:hover{
                         color: #fff;
                         border-radius: 0;
+                    }
+                    .mobile_hide{
+                        display: inherit;
+                    }
+                    /* Mobile */
+                    @media only screen and (max-width:767px) {
+                        .mobile_hide{
+                            display:none;
+                        }
                     }
                 </style>
                 <div class="lts_update_products_pagination">
