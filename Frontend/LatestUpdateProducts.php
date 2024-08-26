@@ -29,12 +29,6 @@ if (!class_exists('LatestUpdateProducts')) {
         {
             if ($query->have_posts()) {
                 echo '<div id="latest_update_products" class="col-12 col-md-12">'; ?>
-                <div class="lts_update_products_pagination">
-                    <?php
-                        // Pagination
-                        self::render_pagination($query);
-                    ?>
-                </div>
                 <div class="row lts_update_product_header">
                     <div class="col-3 col-md-3">Thumbnail</div>
                     <div class="col-5 col-md-5">Product Details</div>
@@ -195,6 +189,12 @@ if (!class_exists('LatestUpdateProducts')) {
                         background-color: #fff;
                         border: 1px solid #000;
                         color: #000;
+                    }
+                    .lts_update_products_pagination .pagination ul li span.current{
+                        background-color: var(--btn-accented-bgcolor);
+                        padding: 8px 10px;
+                        border-radius: 3px;
+                        color: var(--btn-accented-color);
                     }
                 </style>
 
