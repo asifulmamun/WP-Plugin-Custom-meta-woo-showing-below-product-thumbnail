@@ -82,16 +82,16 @@ register_deactivation_hook(__FILE__, 'deactive');
         $demo_btn->field_name_btn_submit = $demo->field_name_btn_txt;
 
 
-    // Video - Dashboard
+    // Video - Dashboard as Need Update
     use Admin\Custom_meta_btn_link_woo as Video;
         $Video = new Video;
-        $Video->meta_name = 'Video Url';
-        $Video->field_desc = 'Enter The Video URL';
+        $Video->meta_name = 'Update Link';
+        $Video->field_desc = 'Enter Update URL';
         $Video->field_name = 'video_url';
         // btn
         $Video->meta_name_btn_txt = 'Button Name';
         $Video->field_name_btn_submit = 'video_btn';
-        $Video->field_name_btn_txt = 'Watch Video';
+        $Video->field_name_btn_txt = 'Need Update ?';
         // show
         use Frontend\Custom_btn as Video_btn;
         $video_btn = new Video_btn;
@@ -107,19 +107,19 @@ register_deactivation_hook(__FILE__, 'deactive');
  * @package wp-premium.org
  */
 
-    //  Auto update field
-    use Admin\Custom_meta_yes_no_data_woo_woodmart as c_Field_auto_update;
-        $custom_field_auto_update = new c_Field_auto_update;
-        $custom_field_auto_update->register();
-        $custom_field_auto_update->field_name = 'auto_update';
-        $custom_field_auto_update->meta_name = 'Auto Update';
+    // //  Auto update field
+    // use Admin\Custom_meta_yes_no_data_woo_woodmart as c_Field_auto_update;
+    //     $custom_field_auto_update = new c_Field_auto_update;
+    //     $custom_field_auto_update->register();
+    //     $custom_field_auto_update->field_name = 'auto_update';
+    //     $custom_field_auto_update->meta_name = 'Auto Update';
 
-    // Mannual Update Field
-    use Admin\Custom_meta_yes_no_data_woo_woodmart as c_Field_mannual_update;
-        $custom_field_mannual_update = new c_Field_mannual_update;
-        $custom_field_mannual_update->register();
-        $custom_field_mannual_update->field_name = 'mannual_update';
-        $custom_field_mannual_update->meta_name = 'Mannual Update';
+    // // Mannual Update Field
+    // use Admin\Custom_meta_yes_no_data_woo_woodmart as c_Field_mannual_update;
+    //     $custom_field_mannual_update = new c_Field_mannual_update;
+    //     $custom_field_mannual_update->register();
+    //     $custom_field_mannual_update->field_name = 'mannual_update';
+    //     $custom_field_mannual_update->meta_name = 'Mannual Update';
 
 
 
@@ -129,12 +129,12 @@ register_deactivation_hook(__FILE__, 'deactive');
  * @package wp-premium.org
  */
 
-    // Version
-    use Admin\Custom_meta_text_woo_woodmart as c_Version;
-        $custom_post_version = new c_Version;
-        $custom_post_version->register();
-        $custom_post_version->field_name = 'product_version';
-        $custom_post_version->meta_name = 'Version';
+    // // Version
+    // use Admin\Custom_meta_text_woo_woodmart as c_Version;
+    //     $custom_post_version = new c_Version;
+    //     $custom_post_version->register();
+    //     $custom_post_version->field_name = 'product_version';
+    //     $custom_post_version->meta_name = 'Version';
 
 
     // Virus Total Hash File
@@ -152,12 +152,12 @@ register_deactivation_hook(__FILE__, 'deactive');
  * @package wp-premium.org
  */
 
-    // Update ON
-    use Admin\Custom_meta_date_woo_woodmart as UpdateOn;
-    $upo = new UpdateOn;
-    $upo->register();
-    $upo->field_name = 'custom_product_update_on';
-    $upo->meta_name = 'Update On';
+    // // Update ON
+    // use Admin\Custom_meta_date_woo_woodmart as UpdateOn;
+    // $upo = new UpdateOn;
+    // $upo->register();
+    // $upo->field_name = 'custom_product_update_on';
+    // $upo->meta_name = 'Update On';
 
 
 
@@ -166,6 +166,7 @@ register_deactivation_hook(__FILE__, 'deactive');
  * @package wp-premium.org 
  */
 
+    // Single product - top of product header or section - custom bredcrums - product meta data table etc
     use Frontend\Customize_woo_single_page as CustomSectionWOOsingle;
     $cs_woo_single = new CustomSectionWOOsingle;
     $cs_woo_single->register();
