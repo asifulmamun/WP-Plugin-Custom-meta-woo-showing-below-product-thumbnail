@@ -47,7 +47,7 @@ if (!class_exists('LatestUpdateProducts')) {
                     <div class="row mb-2 item_lts_update_product">
                         <div class="col-3 col-md-3">
                             <a href="<?php echo get_permalink(); ?>">
-                                <?php echo get_the_post_thumbnail(get_the_ID(), 'thumbnail'); ?>
+                                <?php echo get_the_post_thumbnail(get_the_ID(), 'medium'); ?>
                             </a>
                         </div>
                         <div class="col-5 col-md-5 lts_content">
