@@ -58,12 +58,48 @@ if (!class_exists('LatestUpdateProducts')) {
                             <span title="Updated Date"><?php echo get_the_modified_date('F j, Y', get_the_ID()); ?></span>
                         </div>
                         <div class="col-2 col-md-2">
-                            <a class="join_now" href="/membership-plans/">Join Now</a>
+                            <?php
+                                // check login
+                                if ( is_user_logged_in() ){
+                                    
+                                    // check membership plugin active or not
+                                    if ( is_plugin_active( 'yith-woocommerce-membership-premium/init.php' ) ){
+                                    
+                                        echo do_shortcode('[membership_protected_links]');
+                                        echo '<br/><a class="join_now" href="/membership-plans/">Join Now</a>';
+                                    
+                                    } else{
+                                        echo '<a class="join_now" href="/membership-plans/">Join Now</a>';
+                                    }
+                                }else{
+                                    echo '<a class="join_now" href="/membership-plans/">Join Now</a>';
+                                }
+                            ?>
                         </div>
                     </div>
                 <?php endwhile;
                 echo '</div>';
                 ?>
+                <script>
+                    // If membership download button found then Join now hide
+                    document.addEventListener('DOMContentLoaded', function() {
+                        // Find all elements with the class 'yith-wcmbs-download-button'
+                        var downloadButtons = document.querySelectorAll('.yith-wcmbs-download-button');
+                        
+                        downloadButtons.forEach(function(downloadButton) {
+                            // Get the parent container of the current download button
+                            var parentContainer = downloadButton.parentElement;
+                            
+                            // Check if there is a 'Join Now' button in the same parent container
+                            var joinNowButton = parentContainer.querySelector('.join_now');
+                            
+                            if (joinNowButton) {
+                                // Hide the 'Join Now' button
+                                joinNowButton.style.display = 'none';
+                            }
+                        });
+                    });
+                </script>
                 <style>
                     .lts_update_product_header{
                         background: #000;
