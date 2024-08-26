@@ -65,7 +65,7 @@ if (!class_exists('LatestUpdateProducts')) {
                                     // check membership plugin active or not
                                     if ( is_plugin_active( 'yith-woocommerce-membership-premium/init.php' ) ){
                                     
-                                        echo do_shortcode('[membership_protected_links]');
+                                        echo do_shortcode('[membership_download_product_links]');
                                         echo '<br/><a class="join_now" href="/membership-plans/">Join Now</a>';
                                     
                                     } else{
