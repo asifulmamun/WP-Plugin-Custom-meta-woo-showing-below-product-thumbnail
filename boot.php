@@ -137,12 +137,12 @@ register_deactivation_hook(__FILE__, 'deactive');
     //     $custom_post_version->meta_name = 'Version';
 
 
-    // Virus Total Hash File
-    use Admin\Custom_meta_text_woo_woodmart as Virus_total;
-        $vt = new Virus_total;
-        $vt->register();
-        $vt->field_name = 'vt_data';
-        $vt->meta_name = 'Virus Total Hash File';
+    // // Virus Total Hash File
+    // use Admin\Custom_meta_text_woo_woodmart as Virus_total;
+    //     $vt = new Virus_total;
+    //     $vt->register();
+    //     $vt->field_name = 'vt_data';
+    //     $vt->meta_name = 'Virus Total Hash File';
 
 
 
@@ -166,10 +166,10 @@ register_deactivation_hook(__FILE__, 'deactive');
  * @package wp-premium.org 
  */
 
-    // Single product - top of product header or section - custom bredcrums - product meta data table etc
-    use Frontend\Customize_woo_single_page as CustomSectionWOOsingle;
-    $cs_woo_single = new CustomSectionWOOsingle;
-    $cs_woo_single->register();
+    // // Single product - top of product header or section - custom bredcrums - product meta data table etc
+    // use Frontend\Customize_woo_single_page as CustomSectionWOOsingle;
+    // $cs_woo_single = new CustomSectionWOOsingle;
+    // $cs_woo_single->register();
 
 
 
