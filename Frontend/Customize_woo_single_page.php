@@ -75,30 +75,7 @@ if (!class_exists('Customize_woo_single_page')) {
          *  Global for WOO Single Page 
          */
         public function global_woo_single() {?>
-            <style>
-                /* Global */
-                :root{
-                    --custom_breadcrumb_text_color: #fff;
-                    --virus_total_primary_color: green;
-                    --custom_secondary_color: #7558a2;
-                    --custom_secondary_txt: gray;
-                    --custom_optional_color: red;
-                }
-                ul{
-                    list-style: none;
-                }
-
-                /* display */
-                .d_none{
-                    display: none !important;
-                }
-                .d_block{
-                    display: block !important;
-                }
-                .d_visible{
-                    display: visible !important;
-                }
-            </style>
+            <style>:root{--custom_breadcrumb_text_color:#fff;--virus_total_primary_color:green;--custom_secondary_color:#7558a2;--custom_secondary_txt:gray;--custom_optional_color:red;}ul{list-style:none;}.d_none{display:none !important;}.d_block{display:block !important;}.d_visible{display:visible !important;}</style>
         <?php }
 
 
