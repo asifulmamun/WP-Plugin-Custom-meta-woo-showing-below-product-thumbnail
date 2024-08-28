@@ -53,22 +53,23 @@ if (!class_exists('LatestUpdateProducts')) {
                         </div>
                         <div class="col-md-2 col-lg-2 col-xl-2 mobile_hide">
                             <?php
-                                // check login
-                                if ( is_user_logged_in() ){
+                                // // check login
+                                // if ( is_user_logged_in() ){
                                     
-                                    // check membership plugin active or not
-                                    if ( is_plugin_active( 'yith-woocommerce-membership-premium/init.php' ) ){
+                                //     // check membership plugin active or not
+                                //     if ( is_plugin_active( 'yith-woocommerce-membership-premium/init.php' ) ){
                                     
-                                        echo do_shortcode('[membership_download_product_links]');
-                                        echo '<br/><a class="join_now" href="/membership-plans/">Join Now</a>';
+                                //         echo do_shortcode('[membership_download_product_links]');
+                                //         echo '<br/><a class="join_now" href="/membership-plans/">Join Now</a>';
                                     
-                                    } else{
-                                        echo '<a class="join_now" href="/membership-plans/">Join Now</a>';
-                                    }
-                                }else{
-                                    echo '<a class="join_now" href="/membership-plans/">Join Now</a>';
-                                }
+                                //     } else{
+                                //         echo '<a class="join_now" href="/membership-plans/">Join Now</a>';
+                                //     }
+                                // }else{
+                                //     echo '<a class="join_now" href="/membership-plans/">Join Now</a>';
+                                // }
                             ?>
+                            <a class="join_now" href="/membership-plans/">Join Now</a>
                         </div>
                     </div>
                 <?php endwhile;
@@ -177,34 +178,39 @@ if (!class_exists('LatestUpdateProducts')) {
                         width: fit-content;
                     }
                     .lts_update_products_pagination .pagination ul{
-                        display: flex;
-                        flex-direction: row;
+                        display: inline-flex;
                         flex-wrap: wrap;
-                        gap: .3rem;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 3px;
                     }
                     .lts_update_products_pagination .pagination ul li{
                         list-style: none;
                         flex-grow: 1;
-                        
+                        margin: 0;
                     }
-                    .lts_update_products_pagination .pagination ul li a{
-                        all: unset;
-                        background-color: #000;
-                        color: #fff;
-                        padding: 0.5rem 1rem;
-                        border-radius: 3px;
-                        cursor: pointer;
+                    .lts_update_products_pagination .pagination ul li .page-numbers{
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding-inline: 5px;
+                        min-width: 34px;
+                        height: 34px;
+                        color: var(--color-gray-900);
+                        font-weight: 600;
+                        font-size: 14px;
+                        border-radius: calc(var(--wd-brd-radius) / 1.5);
+                        transition: all .2s ease;
                     }
                     .lts_update_products_pagination .pagination ul li:hover a{
-                        background-color: #fff;
-                        border: 1px solid #000;
+                        background-color: var(--bgcolor-gray-300);
                         color: #000;
                     }
-                    .lts_update_products_pagination .pagination ul li span.current{
-                        background-color: var(--btn-accented-bgcolor);
-                        padding: 8px 10px;
-                        border-radius: 3px;
-                        color: var(--btn-accented-color);
+                    .lts_update_products_pagination .pagination ul li .current{
+                        color: #fff;
+                        background-color: var(--wd-primary-color);
+                        min-width: 34px;
+                        height: 34px;
                     }
                 </style>
 
@@ -227,8 +233,8 @@ if (!class_exists('LatestUpdateProducts')) {
                 'format' => '?paged=%#%',
                 'current' => max(1, get_query_var('paged')),
                 'total' => $query->max_num_pages,
-                'prev_text' => __('&laquo; Previous'),
-                'next_text' => __('Next &raquo;'),
+                'prev_text' => __(''),
+                'next_text' => __('→'),
                 'type' => 'list',
             ));
         
