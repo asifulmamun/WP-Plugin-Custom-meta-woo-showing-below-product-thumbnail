@@ -213,9 +213,7 @@ if (!class_exists('LatestUpdateProducts')) {
                         height: 34px;
                     }
                 </style>
-
                 <?php
-                
                 // Reset Post Data
                 wp_reset_postdata();
             } else {
