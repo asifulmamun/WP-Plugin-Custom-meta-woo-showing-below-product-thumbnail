@@ -61,7 +61,7 @@ register_deactivation_hook(__FILE__, 'deactive');
         $ul_product_below->new_el = 'ul';
         $ul_product_below->new_el_id = 'el_below_product_thumb';
         $ul_product_below->new_el_className = 'el_below_product_thumb';
-        $ul_product_below->new_el_styles = '<style>.el_below_product_thumb{flex-basis:100%;order:100;list-style:none;padding:.8rem 0 .8rem 0;display:flex;flex-direction:row;gap:0.8rem;}</style>';
+        $ul_product_below->new_el_styles = '<style>.el_below_product_thumb{flex-basis:100%;order:100;list-style:none;padding:.8rem 0 .8rem 0;display:flex;flex-direction:row;gap:0.8rem;margin-bottom:0 !important;}</style>';
         // $ul_product_below->new_el_innerHTML = '<b>The Demo</b>';
 
 
