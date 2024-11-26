@@ -96,6 +96,9 @@ if (!class_exists('LatestUpdateProducts')) {
                     });
                 </script>
                 <style>
+                    /* Override Bootstrap - If Bootstrap is missing */
+                    .row{display:flex;flex-wrap:wrap;margin-right:-.75rem;margin-left:-.75rem}.col-12{flex:0 0 auto;width:100%}@media (min-width:768px){.col-md-12{flex:0 0 auto;width:100%}.col-md-3{flex:0 0 auto;width:25%}.col-md-5{flex:0 0 auto;width:41.66667%}.col-md-2{flex:0 0 auto;width:16.66667%}}@media (min-width:992px){.col-lg-3{flex:0 0 auto;width:25%}.col-lg-5{flex:0 0 auto;width:41.66667%}.col-lg-2{flex:0 0 auto;width:16.66667%}}@media (min-width:1200px){.col-xl-3{flex:0 0 auto;width:25%}.col-xl-5{flex:0 0 auto;width:41.66667%}.col-xl-2{flex:0 0 auto;width:16.66667%}}[class^=col-]{padding-right:.75rem;padding-left:.75rem}
+                    /* Latest Update Products */
                     .lts_update_product_header{
                         background: #000;
                         color: #fff;
