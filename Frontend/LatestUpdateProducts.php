@@ -37,7 +37,6 @@ if (!class_exists('LatestUpdateProducts')) {
                 </div>
                 <?php while ($query->have_posts()):
                     $query->the_post(); ?>
-
                     <div class="row mb-2 item_lts_update_product">
                         <div class="col-md-3 col-lg-3 col-xl-3 mobile_hide">
                             <a href="<?php echo get_permalink(); ?>">
@@ -99,72 +98,7 @@ if (!class_exists('LatestUpdateProducts')) {
                     /* Override Bootstrap - If Bootstrap is missing */
                     .row{display:flex;flex-wrap:wrap;margin-right:-.75rem;margin-left:-.75rem}.col-12{flex:0 0 auto;width:100%}@media (min-width:768px){.col-md-12{flex:0 0 auto;width:100%}.col-md-3{flex:0 0 auto;width:25%}.col-md-5{flex:0 0 auto;width:41.66667%}.col-md-2{flex:0 0 auto;width:16.66667%}}@media (min-width:992px){.col-lg-3{flex:0 0 auto;width:25%}.col-lg-5{flex:0 0 auto;width:41.66667%}.col-lg-2{flex:0 0 auto;width:16.66667%}}@media (min-width:1200px){.col-xl-3{flex:0 0 auto;width:25%}.col-xl-5{flex:0 0 auto;width:41.66667%}.col-xl-2{flex:0 0 auto;width:16.66667%}}[class^=col-]{padding-right:.75rem;padding-left:.75rem}
                     /* Latest Update Products */
-                    .lts_update_product_header{
-                        background: #000;
-                        color: #fff;
-                        font-weight: 800;
-                        padding: .6rem 0rem;
-                        border-radius: 3px;
-                    }
-                    .lts_update_product_header>div{
-                        border-right: 1px solid #fff;
-                    }
-                    .lts_update_product_header>div:last-child{
-                        border-right: 0 !important;
-                    }
-                    #latest_update_products{
-                        display: flex;
-                        flex-direction: column;
-                        gap: 1.4rem;
-                    }
-                    #latest_update_products .item_lts_update_product{
-                        background-color: #ededed;
-                        color: #444444;
-                        padding-top: 1rem;
-                        padding-bottom: 1rem;
-                        align-items: center;
-                        border-radius: 5px;
-                        box-shadow: 5px 3px 11px -2px #1e1d1d;
-                        -ms-box-shadow: 5px 3px 11px -2px #1e1d1d;
-                        -moz-box-shadow: 5px 3px 11px -2px #1e1d1d;
-                        -webkit-box-shadow: 5px 3px 11px -2px #1e1d1d;
-                        -o-box-shadow: 5px 3px 11px -2px #1e1d1d;
-                    }
-                    #latest_update_products .item_lts_update_product a img{
-                        width: 100%;
-                        max-height: 9.3rem;
-                    }
-                    #latest_update_products .item_lts_update_product .lts_content a.title{
-                        font-size: 1.1rem;
-                        font-weight: 600;
-                        margin-bottom: .2rem;
-                    }
-                    .join_now{
-                        background: #000;
-                        color: #fff;
-                        padding: .4rem .8rem;
-                        border-radius: 5px;
-                        font-size: 1rem;
-                        text-transform: uppercase;
-                        box-shadow: 4px 5px 8px 1px #383131;
-                        -ms-box-shadow: 4px 5px 8px 1px #383131;
-                        -moz-box-shadow: 4px 5px 8px 1px #383131;
-                        -webkit-box-shadow: 4px 5px 8px 1px #383131;
-                        -o-box-shadow: 4px 5px 8px 1px #383131;
-                    }
-                    .join_now:hover{
-                        color: #fff;
-                        border-radius: 0;
-                    }
-                    .mobile_hide{
-                        display: inherit;
-                    }
-                    /* Mobile */
-                    @media only screen and (max-width:767px) {
-                        .mobile_hide{
-                            display:none;
-                        }
-                    }
+                    .lts_update_product_header{background:#000;color:#fff;font-weight:800;padding:.6rem 0;border-radius:3px}.lts_update_product_header>div{border-right:1px solid #fff}.lts_update_product_header>div:last-child{border-right:0!important}#latest_update_products{display:flex;flex-direction:column;gap:1.4rem}#latest_update_products .item_lts_update_product{background-color:#ededed;color:#444;padding-top:1rem;padding-bottom:1rem;align-items:center;border-radius:5px;box-shadow:5px 3px 11px -2px #1e1d1d;-ms-box-shadow:5px 3px 11px -2px #1e1d1d;-moz-box-shadow:5px 3px 11px -2px #1e1d1d;-webkit-box-shadow:5px 3px 11px -2px #1e1d1d;-o-box-shadow:5px 3px 11px -2px #1e1d1d}#latest_update_products .item_lts_update_product a img{width:100%;max-height:9.3rem}#latest_update_products .item_lts_update_product .lts_content a.title{font-size:1.1rem;font-weight:600;margin-bottom:.2rem}.join_now{background:#000;color:#fff;padding:.4rem .8rem;border-radius:5px;font-size:1rem;text-transform:uppercase;box-shadow:4px 5px 8px 1px #383131;-ms-box-shadow:4px 5px 8px 1px #383131;-moz-box-shadow:4px 5px 8px 1px #383131;-webkit-box-shadow:4px 5px 8px 1px #383131;-o-box-shadow:4px 5px 8px 1px #383131}.join_now:hover{color:#fff;border-radius:0}.mobile_hide{display:inherit}@media only screen and (max-width:767px){.mobile_hide{display:none}}
                 </style>
                 <div class="lts_update_products_pagination">
                     <?php
@@ -173,48 +107,8 @@ if (!class_exists('LatestUpdateProducts')) {
                     ?>
                 </div>
                 <style>
-                    .lts_update_products_pagination{
-                        display: block;
-                        margin: 0 auto;
-                        padding: 2rem 0;
-                        color: #1e1d1d;
-                        width: fit-content;
-                    }
-                    .lts_update_products_pagination .pagination ul{
-                        display: inline-flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 3px;
-                    }
-                    .lts_update_products_pagination .pagination ul li{
-                        list-style: none;
-                        flex-grow: 1;
-                        margin: 0;
-                    }
-                    .lts_update_products_pagination .pagination ul li .page-numbers{
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        padding-inline: 5px;
-                        min-width: 34px;
-                        height: 34px;
-                        color: var(--color-gray-900);
-                        font-weight: 600;
-                        font-size: 14px;
-                        border-radius: calc(var(--wd-brd-radius) / 1.5);
-                        transition: all .2s ease;
-                    }
-                    .lts_update_products_pagination .pagination ul li:hover a{
-                        background-color: var(--bgcolor-gray-300);
-                        color: #000;
-                    }
-                    .lts_update_products_pagination .pagination ul li .current{
-                        color: #fff;
-                        background-color: var(--wd-primary-color);
-                        min-width: 34px;
-                        height: 34px;
-                    }
+                    /* Latest Update Products Pagination */
+                    .lts_update_products_pagination{display:block;margin:0 auto;padding:2rem 0;color:#1e1d1d;width:fit-content}.lts_update_products_pagination .pagination ul{display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:3px}.lts_update_products_pagination .pagination ul li{list-style:none;flex-grow:1;margin:0}.lts_update_products_pagination .pagination ul li .page-numbers{display:inline-flex;align-items:center;justify-content:center;padding-inline:5px;min-width:34px;height:34px;color:var(--color-gray-900);font-weight:600;font-size:14px;border-radius:calc(var(--wd-brd-radius)/ 1.5);transition:.2s}.lts_update_products_pagination .pagination ul li:hover a{background-color:var(--bgcolor-gray-300);color:#000}.lts_update_products_pagination .pagination ul li .current{color:#fff;background-color:var(--wd-primary-color);min-width:34px;height:34px}
                 </style>
                 <?php
                 // Reset Post Data
