@@ -43,7 +43,7 @@ if (!class_exists('Custom_meta_btn_link_woo')) {
 
             $render_form = '';
 
-            $render_form .= '<p>'. $this->field_desc .'&nbsp;<a target="_blank" href="https://asifulmamun.info.bd" class="credit">@asifulmamun</a></p>';
+            // $render_form .= '<p>'. $this->field_desc .'&nbsp;<a target="_blank" href="https://asifulmamun.info.bd" class="credit">@asifulmamun</a></p>';
             $render_form .= '<ul class="meta_wrap">';
                 $render_form .= '<li>';
                         $render_form .= '<label for="'. $this->field_name .'">'. $this->meta_name .'</label>';

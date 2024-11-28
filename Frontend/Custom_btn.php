@@ -44,7 +44,7 @@ class Custom_btn {
                 contentLoad('<?php echo $custom_content; ?>');
             });
         </script>
-        <style>.view_demo_btn {padding:.8rem 1rem;border-radius:var(--btn-accented-brd-radius);color:var(--btn-accented-color);box-shadow:var(--btn-accented-box-shadow);background-color:var(--btn-accented-bgcolor);text-transform:var(--btn-accented-transform, var(--btn-transform));font-weight:var(--btn-accented-font-weight, var(--btn-font-weight));font-family:var(--btn-accented-font-family, var(--btn-font-family));font-style:var(--btn-accented-font-style, var(--btn-font-style));order:20;}</style>
+        <style>.view_demo_btn {padding:.8rem 1rem;border-radius:var(--btn-accented-brd-radius);color:var(--btn-accented-color);box-shadow:var(--btn-accented-box-shadow);background-color:var(--btn-accented-bgcolor);text-transform:var(--btn-accented-transform, var(--btn-transform));font-weight:600;font-family:var(--btn-accented-font-family, var(--btn-font-family));font-style:var(--btn-accented-font-style, var(--btn-font-style));order:20;}</style>
 
         <script type="text/javascript">
             // Function to dynamically add content to the product gallery

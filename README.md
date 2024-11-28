@@ -4,6 +4,11 @@ Latest product in page short code: ```[latest_updated_products limit="10"]``` //
 
 #### ChangeLog
 
+v2.2.1-lts      : Removed by commenting (Muted)
+- From dashboard remove developer name/credit link
+- Product details custom btn text bolder
+- Fix css issue for latest updated products, default grid css override the bootstrap and no matter bootstrap css exist or not
+
 v2.0.0-lts      : Removed by commenting (Muted)
                     - Add field (Auto Update, Mannual Update, Version, Update On, virus total)
                     - Custom Header, Mini status with new custom fields - Single Product Page
